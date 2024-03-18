@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Wacc Finder 2.0</title>
+
+    <link rel="stylesheet" href="../assets/css/mklb.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+    />
+    <!-- <link rel="stylesheet" type="text/css" href="./public/css/app.css" /> -->
+    <link rel="stylesheet" type="text/css" href="../public/css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header id="main_header">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <nav class="navbar navbar-expand-md">
+              <div class="container-fluid">
+                <a class="navbar-brand" href="/components/get-started.html">
+                  <img src="../public/images/logo.png" alt="WACC Finder" />
+                </a>
+                <button
+                  class="navbar-toggler"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#wacc-menu-toggler"
+                  aria-controls="wacc-menu-toggler"
+                  aria-expanded="false"
+                  aria-label="Toggle navigation"
+                >
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="wacc-menu-toggler">
+                  <ul class="navbar-nav ms-auto mb-2 mb-md-0">
+                    <li class="nav-item">
+                      <a
+                        class="nav-link"
+                        href="notification.html"
+                        data-bs-toggle="tooltip"
+                        data-bs-placement="bottom"
+                        data-bs-custom-class="custom-tooltip"
+                        data-bs-title="Notifications"
+                      >
+                        <img
+                          src="../public/images/Navbar/ic-head-notif.svg"
+                          alt=""
+                        />
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a
+                        class="nav-link"
+                        href="help-centre.html"
+                        data-bs-toggle="tooltip"
+                        data-bs-placement="bottom"
+                        data-bs-custom-class="custom-tooltip"
+                        data-bs-title="Help Centre"
+                      >
+                        <img
+                          src="../public/images/Navbar/ic-head-mail.svg"
+                          alt=""
+                        />
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a
+                        class="nav-link"
+                        href="video-tutorial.html"
+                        data-bs-toggle="tooltip"
+                        data-bs-placement="bottom"
+                        data-bs-custom-class="custom-tooltip"
+                        data-bs-title="Video Tutorials"
+                      >
+                        <img
+                          src="../public/images/Navbar/header-menu-video.svg"
+                          alt=""
+                        />
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a
+                        class="nav-link"
+                        href="wacc-result.html"
+                        data-bs-toggle="tooltip"
+                        data-bs-placement="bottom"
+                        data-bs-custom-class="custom-tooltip"
+                        data-bs-title="WACC Finder"
+                      >
+                        <img
+                          src="../public/images/Navbar/ic-head-orders.svg"
+                          alt=""
+                        />
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a
+                        class="nav-link"
+                        href="account.html"
+                        data-bs-toggle="tooltip"
+                        data-bs-placement="bottom"
+                        data-bs-custom-class="custom-tooltip"
+                        data-bs-title="Account"
+                      >
+                        <img
+                          src="../public/images/Navbar/header-menu-account.svg"
+                          alt=""
+                        />
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+      <section id="get-started">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-7">
+              <section class="calculator__action freeUser">
+                <div class="container">
+                  <!-- Tab navigation-->
+
+                  <ul class="calctab nav nav-tabs" id="calcTab" role="tablist">
+                    <li class="nav-item">
+                      <a
+                        class="nav-link active"
+                        id="calc1-tab"
+                        data-bs-toggle="tab"
+                        href="#calc1"
+                        role="tab"
+                        >Steps 1</a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a
+                        class="nav-link"
+                        id="calc2-tab"
+                        data-bs-toggle="tab"
+                        href="#calc2"
+                        role="tab"
+                        >Steps 2</a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a
+                        class="nav-link"
+                        id="calc3-tab"
+                        data-bs-toggle="tab"
+                        href="#calc3"
+                        role="tab"
+                        >Steps 3</a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a
+                        class="nav-link"
+                        id="calc4-tab"
+                        data-bs-toggle="tab"
+                        href="#calc4"
+                        role="tab"
+                        >Steps 4</a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a
+                        class="nav-link"
+                        id="calc5-tab"
+                        data-bs-toggle="tab"
+                        href="#calc5"
+                        role="tab"
+                        >Steps 5</a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a
+                        class="nav-link"
+                        id="calc6-tab"
+                        data-bs-toggle="tab"
+                        href="#calc6"
+                        role="tab"
+                        >Steps 6</a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a
+                        class="nav-link"
+                        id="calc7-tab"
+                        data-bs-toggle="tab"
+                        href="#calc7"
+                        role="tab"
+                        >Steps 7</a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a
+                        class="nav-link"
+                        id="calc8-tab"
+                        data-bs-toggle="tab"
+                        href="#calc8"
+                        role="tab"
+                        >Steps 8</a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a
+                        class="nav-link"
+                        id="calc9-tab"
+                        data-bs-toggle="tab"
+                        href="#calc9"
+                        role="tab"
+                        >Steps 9</a
+                      >
+                    </li>
+                  </ul>
+                  <!-- Tab content-->
+                  <form class="forms" id="frm_calc">
+                    <div class="tab-content" id="calcTabContent">
+                      <div
+                        class="tab-pane fade show active"
+                        id="calc1"
+                        role="tabpanel"
+                      >
+                        <div class="row">
+                          <div class="col-lg-8">
+                            <div class="stepper"><span>1</span></div>
+                            <div class="calculator__question">
+                              <div class="form-group">
+                                <label for="duration"
+                                  >Select duration of cash flow</label
+                                >
+                                <select
+                                  id="duration"
+                                  name="duration"
+                                  class="form-select"
+                                  title="Select duration of cash flow"
+                                >
+                                  <option
+                                    class="bs-title-option"
+                                    value=""
+                                  ></option>
+                                  <option value="5">1-5 years</option>
+                                  <option value="10">5 years and above</option>
+                                </select>
+                              </div>
+                              <div class="form-notes">
+                                <p>
+                                  If the cash flows belong to a going concern
+                                  business, leave it at 5 years and above.
+                                </p>
+                              </div>
+                              <div class="form-action">
+                                <button
+                                  class="btn btn-brown-gold"
+                                  type="submit"
+                                >
+                                  OK</button
+                                ><span class="btn-note"
+                                  ><small>Press &nbsp;</small><b>Enter</b></span
+                                >
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="tab-pane fade" id="calc2" role="tabpanel">
+                        <div class="row">
+                          <div class="col-lg-8">
+                            <div class="stepper"><span>2</span></div>
+                            <div class="calculator__question">
+                              <div class="form-group">
+                                <label>Select valuation date</label>
+                                <div class="row">
+                                  <div class="col">
+                                    <select
+                                      class="form-select"
+                                      id="month"
+                                      title="Select month"
+                                      name="month"
+                                    >
+                                      <option value=""></option>
+                                      <option value="January">January</option>
+                                      <option value="February">February</option>
+                                      <option value="March">March</option>
+                                      <option value="May">May</option>
+                                      <option value="June">June</option>
+                                      <option value="July">July</option>
+                                      <option value="August">August</option>
+                                      <option value="September">
+                                        September
+                                      </option>
+                                      <option value="October">October</option>
+                                      <option value="November">November</option>
+                                      <option value="December">December</option>
+                                    </select>
+                                  </div>
+                                  <div class="col">
+                                    <select
+                                      class="form-select"
+                                      id="year"
+                                      title="Select year"
+                                      name="year"
+                                    >
+                                      <option value=""></option>
+                                      <option value="2022">2022</option>
+                                      <option value="2021">2021</option>
+                                      <option value="2020">2020</option>
+                                    </select>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="form-action">
+                                <button
+                                  class="btn btn-brown-gold"
+                                  type="submit"
+                                >
+                                  OK</button
+                                ><span class="btn-note"
+                                  ><small>Press &nbsp;</small><b>Enter</b></span
+                                >
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="tab-pane fade" id="calc3" role="tabpanel">
+                        <div class="row">
+                          <div class="col-lg-8">
+                            <div class="stepper"><span>3</span></div>
+                            <div class="calculator__question">
+                              <div class="form-group">
+                                <label for="country"
+                                  >Select your country of operation</label
+                                >
+                                <select
+                                  name="country"
+                                  id="country"
+                                  class="form-select"
+                                  title="Select country"
+                                >
+                                  <option value="">Select your country</option>
+                                  <option value="4.2%">Australia</option>
+                                </select>
+                              </div>
+                              <div class="form-notes">
+                                <p>
+                                  Select based on geography of business
+                                  operation, not country of incorporation. If
+                                  you have more than one, please pick your
+                                  principal country of operation, i.e. where the
+                                  <br />largest percentage of revenue arises.
+                                </p>
+                                <p>
+                                  When you checkout, select Subscription plan
+                                  which allows <br />
+                                  you to input multiple countries. (2) Only
+                                  AAA-rated<br />
+                                  countries are included in this list. To unlock
+                                  WACCFinder's <br />full list of countries,
+                                  i.e. AAA-rated and non-rated, please <br />
+                                  select Subscription plan at checkout.
+                                </p>
+                              </div>
+                              <div class="form-watch">
+                                <a
+                                  class="btn-watch mklbItem"
+                                  data-youtube-id="wuo13FrNX6g"
+                                >
+                                  <div class="icon-watch">
+                                    <img
+                                      src="../public/images/Get-Started/ic-watch-video.svg"
+                                      alt="icon"
+                                    />
+                                  </div>
+                                  <span>Watch The Video</span></a
+                                >
+                              </div>
+                              <div class="form-action">
+                                <button
+                                  class="btn btn-brown-gold"
+                                  type="submit"
+                                >
+                                  OK</button
+                                ><span class="btn-note"
+                                  ><small>Press &nbsp;</small><b>Enter</b></span
+                                >
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="tab-pane fade" id="calc4" role="tabpanel">
+                        <div class="row">
+                          <div class="col-lg-8">
+                            <div class="stepper"><span>4</span></div>
+                            <div class="calculator__question">
+                              <div class="form-group">
+                                <label for="currency"
+                                  >Select your transactional currency</label
+                                >
+                                <select
+                                  id="currency"
+                                  name="currency"
+                                  class="form-select"
+                                  title="Select currency"
+                                >
+                                  <option value=""></option>
+                                  <option value="2.7%">AUD</option>
+                                </select>
+                              </div>
+                              <div class="form-notes">
+                                <p>
+                                  e.g. the currency you invoice in. If you have
+                                  more than one, please pick your principal
+                                  billing currency. When you checkout, select
+                                  Subscription plan which allows you to input
+                                  multiple currencies.
+                                </p>
+                              </div>
+                              <div class="form-watch">
+                                <a
+                                  class="btn-watch mklbItem"
+                                  data-youtube-id="wuo13FrNX6g"
+                                >
+                                  <div class="icon-watch">
+                                    <img
+                                      src="https://waccfinder.com/wacc/images/ic-watch-video.svg"
+                                      alt="icon"
+                                    />
+                                  </div>
+                                  <span>Watch The Video</span></a
+                                >
+                              </div>
+                              <div class="form-action">
+                                <button
+                                  class="btn btn-brown-gold"
+                                  type="submit"
+                                >
+                                  OK</button
+                                ><span class="btn-note"
+                                  ><small>Press &nbsp;</small><b>Enter</b></span
+                                >
+                              </div>
+                            </div>
+                          </div>
+
+                          <div
+                            class="modal modalECurrency"
+                            id="modalEcurrency"
+                            tabindex="-1"
+                            aria-modal="true"
+                          >
+                            <div
+                              class="modal-dialog modal-dialog-centered modal-md"
+                            >
+                              <div class="modal-content">
+                                <div class="modal-body">
+                                  <h4>
+                                    Please confirm if you wish to proceed.
+                                  </h4>
+                                  <p>
+                                    Hi, I’m VALLARIS Bot. I note that you have
+                                    selected a non-local currency, a currency
+                                    that is not denominated in your country of
+                                    operation. Find out more.
+                                  </p>
+                                </div>
+                                <div class="modal-footer">
+                                  <div class="btn-wrap text-right">
+                                    <a
+                                      class="btn btn-deactivate me-3"
+                                      href="#"
+                                      data-bs-dismiss="modal"
+                                      >No</a
+                                    ><a class="btn btn-brown-gold" href="#"
+                                      >Yes</a
+                                    >
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="tab-pane fade" id="calc5" role="tabpanel">
+                        <div class="row">
+                          <div class="col-lg-8">
+                            <div class="stepper"><span>5</span></div>
+                            <div class="calculator__question">
+                              <div class="form-group">
+                                <label for="industri"
+                                  >Select your industry</label
+                                >
+                                <select
+                                  class="form-select"
+                                  id="industri"
+                                  name="industri"
+                                  title="Select industry"
+                                >
+                                  <option
+                                    class="bs-title-option"
+                                    value=""
+                                  ></option>
+                                  <option value="1.2">Advertising</option>
+                                  <option value="1.2">Aerospace/Defense</option>
+                                </select>
+                              </div>
+                              <div class="form-notes">
+                                <p>
+                                  Select the industry the business is in. If you
+                                  are in more than one, please pick your
+                                  principal industry, i.e. the industry that
+                                  contributes most of your revenues or assets.
+                                </p>
+                              </div>
+                              <div class="form-watch">
+                                <a
+                                  class="btn-watch mklbItem"
+                                  data-youtube-id="wuo13FrNX6g"
+                                >
+                                  <div class="icon-watch">
+                                    <img
+                                      src="https://waccfinder.com/wacc/images/ic-watch-video.svg"
+                                      alt="icon"
+                                    />
+                                  </div>
+                                  <span>Watch The Video</span></a
+                                >
+                              </div>
+                              <div class="form-action">
+                                <button
+                                  class="btn btn-brown-gold"
+                                  type="submit"
+                                >
+                                  OK</button
+                                ><span class="btn-note"
+                                  ><small>Press &nbsp;</small><b>Enter</b></span
+                                >
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="tab-pane fade" id="calc6" role="tabpanel">
+                        <div class="row">
+                          <div class="col-lg-8">
+                            <div class="stepper"><span>6</span></div>
+                            <div class="calculator__question">
+                              <div class="form-group percentage">
+                                <label for="pre_tax"
+                                  >What is your pre-tax cost of debt?</label
+                                >
+                                <input
+                                  name="pre_tax"
+                                  id="pre_tax"
+                                  class="form-control"
+                                  type="number"
+                                />
+                              </div>
+                              <div class="form-notes">
+                                <p>
+                                  You can find it under your balance sheet
+                                  footnotes to long-term third-party debt, e.g.
+                                  bank loan with a minimum of 5 year tenure.
+                                </p>
+                              </div>
+                              <div class="form-watch">
+                                <a
+                                  class="btn-watch mklbItem"
+                                  data-youtube-id="wuo13FrNX6g"
+                                >
+                                  <div class="icon-watch">
+                                    <img
+                                      src="https://waccfinder.com/wacc/images/ic-watch-video.svg"
+                                      alt="icon"
+                                    />
+                                  </div>
+                                  <span>Watch The Video</span></a
+                                >
+                              </div>
+                              <div class="form-action">
+                                <button
+                                  class="btn btn-brown-gold"
+                                  type="submit"
+                                >
+                                  OK</button
+                                ><span class="btn-note"
+                                  ><small>Press &nbsp;</small><b>Enter</b></span
+                                >
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="tab-pane fade" id="calc7" role="tabpanel">
+                        <div class="row">
+                          <div class="col-lg-8">
+                            <div class="stepper"><span>7</span></div>
+                            <div class="calculator__question">
+                              <div class="form-group percentage">
+                                <label for="tax"
+                                  >What is your corporate tax rate?</label
+                                >
+                                <input
+                                  class="form-control"
+                                  name="tax"
+                                  id="tax"
+                                  type="number"
+                                />
+                              </div>
+                              <p class="text-danger"></p>
+                              <div class="form-notes">
+                                <p>
+                                  Select your marginal tax rate. Do not use
+                                  effective tax rate unless it represents a
+                                  sustainable, long term rate.
+                                </p>
+                              </div>
+                              <div class="form-watch">
+                                <a
+                                  class="btn-watch mklbItem"
+                                  data-youtube-id="wuo13FrNX6g"
+                                >
+                                  <div class="icon-watch">
+                                    <img
+                                      src="https://waccfinder.com/wacc/images/ic-watch-video.svg"
+                                      alt="icon"
+                                    />
+                                  </div>
+                                  <span>Watch The Video</span></a
+                                >
+                              </div>
+                              <div class="form-action">
+                                <button
+                                  class="btn btn-brown-gold"
+                                  type="submit"
+                                >
+                                  OK</button
+                                ><span class="btn-note"
+                                  ><small>Press &nbsp;</small><b>Enter</b></span
+                                >
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="tab-pane fade" id="calc8" role="tabpanel">
+                        <div class="row">
+                          <div class="col-lg-8">
+                            <div class="stepper"><span>8</span></div>
+                            <div class="calculator__question">
+                              <div class="form-group percentage">
+                                <label for="percent_debt"
+                                  >What is your target’s debt as a percentage of
+                                  debt + equity?</label
+                                >
+                                <input
+                                  class="form-control"
+                                  name="percent_debt"
+                                  id="percent_debt"
+                                  type="number"
+                                />
+                              </div>
+                              <div class="form-notes">
+                                <p>
+                                  Long term debt / (long term debt + equity).
+                                  Equity = market capitalization + minority
+                                  interest + preference shares (if listed under
+                                  the equity section of the balance sheet of
+                                  your business' financial statements.
+                                </p>
+                              </div>
+                              <div class="form-watch">
+                                <a
+                                  class="btn-watch mklbItem"
+                                  data-youtube-id="wuo13FrNX6g"
+                                >
+                                  <div class="icon-watch">
+                                    <img
+                                      src="https://waccfinder.com/wacc/images/ic-watch-video.svg"
+                                      alt="icon"
+                                    />
+                                  </div>
+                                  <span>Watch The Video</span></a
+                                >
+                              </div>
+                              <div class="form-action">
+                                <button
+                                  class="btn btn-brown-gold"
+                                  type="submit"
+                                >
+                                  OK</button
+                                ><span class="btn-note"
+                                  ><small>Press &nbsp;</small><b>Enter</b></span
+                                >
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="tab-pane fade" id="calc9" role="tabpanel">
+                        <div class="row justify-content-center text-center">
+                          <div class="col-lg-9">
+                            <div class="section__heading">
+                              <h1>Congratulations!</h1>
+                            </div>
+                            <div class="section__subtitle wacc-total-results">
+                              <p>
+                                Your WACCFinder<sup>TM</sup> result is
+                                <span class="result">0</span>
+                              </p>
+                            </div>
+                            <div class="final_formData">
+                              <input
+                                type="hidden"
+                                id="hidden_duration"
+                                name="final_durationValue"
+                              />
+                              <input
+                                type="hidden"
+                                id="hidden_month"
+                                name="final_monthValue"
+                              />
+                              <input
+                                type="hidden"
+                                id="hidden_year"
+                                name="final_yearValue"
+                              />
+                              <input
+                                type="hidden"
+                                id="hidden_costOfEquity"
+                                name="final_costOfEquity"
+                              />
+                              <input
+                                type="hidden"
+                                id="hidden_costOfDebt"
+                                name="final_costOfDebt"
+                              />
+                              <input
+                                type="hidden"
+                                id="hidden_percentEquity"
+                                name="final_percentEquity"
+                              />
+                              <input
+                                type="hidden"
+                                id="hidden_percentDebt"
+                                name="final_percentDebt"
+                              />
+                              <input
+                                type="hidden"
+                                id="hidden_wacc"
+                                name="final_wacc"
+                              />
+                            </div>
+                            <hr />
+                            <div class="section__action">
+                              <div class="row justify-content-between">
+                                <div class="col">
+                                  <a
+                                    class="btn transparent-btn"
+                                    href="get-started.html"
+                                    >Reset Data</a
+                                  >
+                                </div>
+                                <div class="col">
+                                  <button
+                                    class="btn btn-brown-gold"
+                                    type="submit"
+                                  >
+                                    Save Result
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+                <section class="calculator__nav">
+                  <div class="container">
+                    <div class="row justify-content-end">
+                      <div class="navs">
+                        <div class="proegressbar-box">
+                          <div class="total-steps">
+                            <span><u>1</u> of 8 questions</span>
+                          </div>
+                          <div class="progress">
+                            <div
+                              class="progress-bar"
+                              role="progressbar"
+                              style="width: 12.5%"
+                            ></div>
+                          </div>
+                        </div>
+                        <div class="navs__buttons">
+                          <a class="prevtab navs__up"
+                            ><img
+                              src="../public/images/Get-Started/ic-chevrons-down.svg"
+                              alt="icon" /></a
+                          ><a class="nexttab navs__down"
+                            ><img
+                              src="../public/images/Get-Started/ic-chevrons-down.svg"
+                              alt="icon"
+                          /></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              </section>
+            </div>
+            <div class="col-lg-5 mt-5 mt-md-0">
+              <h3 class="text-center">Your WACC Calculation</h3>
+              <p class="text-center">
+                Complete the questions and your calculation will appear here
+              </p>
+              <div class="rumus mt-5">
+                <div class="rumus__item multiplication">
+                  <div class="circle cost_of_equity">
+                    <div class="text">
+                      <span>Cost of Equity</span>
+                    </div>
+                    <div class="value value-cost_of_equity">
+                      <span class="span-cost_of_equity">0%</span>
+                    </div>
+                  </div>
+                  <div class="circle percentage_equity">
+                    <div class="text">
+                      <span>% Equity</span>
+                    </div>
+                    <div class="value value-percentage_equity">
+                      <span class="span-percentage_equity">0%</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="addition">+</div>
+                <div class="rumus__item multiplication">
+                  <div class="circle cost_of_debt">
+                    <div class="text">
+                      <span>Cost of Debt</span>
+                    </div>
+                    <div class="value value-cost_of_debt">
+                      <span class="span-cost_of_debt">0%</span>
+                    </div>
+                  </div>
+                  <div class="circle percentage_debt">
+                    <div class="text text-percentage_debt">
+                      <span>% debt</span>
+                    </div>
+                    <div class="value value-percentage_debt">
+                      <span class="span-percentage_debt">0%</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="equals">=</div>
+                <div class="rumus__item">
+                  <div class="circle wacc_total">
+                    <div class="text text-wacc_total">
+                      <span>WACC</span>
+                    </div>
+                    <div class="value value-wacc_total">
+                      <span class="span-wacc_total">0%</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer footer__secondary" id="login-footer">
+      <div class="container">
+        <div class="footer__wrap">
+          <div class="footer__top">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="footer__copyright text-center text-md-start">
+                  <p>© 2024 All rights reserved. Vallaris Private Limited</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="footer__logo">
+                  <a href="#"
+                    ><img
+                      class="ms-md-auto"
+                      src="../public/images/logo.png"
+                      alt="WACC Finder"
+                  /></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="footer__note">
+            <p>
+              VALLARIS refers to the VALLARIS network and/or one or more of its
+              member firms, each of which is a separate legal entity.
+            </p>
+            <p>
+              Content on this site is solely intended to provide general
+              information and does not provide any advice or create any
+              relationship, whether legally binding or otherwise. Please consult
+              your advisers for specific advice.
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/mklb.js"></script>
+    <script src="../public/js/main.js"></script>
+  </body>
+</html>

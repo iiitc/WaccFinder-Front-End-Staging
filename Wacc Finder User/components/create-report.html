@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Wacc Finder 2.0</title>
+
+    <link rel="stylesheet" href="../assets/css/mklb.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+    />
+    <!-- <link rel="stylesheet" type="text/css" href="./public/css/app.css" /> -->
+    <link rel="stylesheet" type="text/css" href="../public/css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header id="main_header">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <nav class="navbar navbar-expand-md">
+              <div class="container-fluid">
+                <a class="navbar-brand" href="/components/get-started.html">
+                  <img src="../public/images/logo.png" alt="WACC Finder" />
+                </a>
+                <button
+                  class="navbar-toggler"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#wacc-menu-toggler"
+                  aria-controls="wacc-menu-toggler"
+                  aria-expanded="false"
+                  aria-label="Toggle navigation"
+                >
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="wacc-menu-toggler">
+                  <ul class="navbar-nav ms-auto mt-4 mt-md-0 mb-2 mb-md-0">
+                    <li class="nav-item">
+                      <a
+                        class="nav-link"
+                        href="notification.html"
+                        data-bs-toggle="tooltip"
+                        data-bs-placement="bottom"
+                        data-bs-custom-class="custom-tooltip"
+                        data-bs-title="Notifications"
+                      >
+                        <img
+                          src="../public/images/Navbar/ic-head-notif.svg"
+                          alt=""
+                        />
+                        <span class="d-md-none text-white">Notifications</span>
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a
+                        class="nav-link"
+                        href="help-centre.html"
+                        data-bs-toggle="tooltip"
+                        data-bs-placement="bottom"
+                        data-bs-custom-class="custom-tooltip"
+                        data-bs-title="Help Centre"
+                      >
+                        <img
+                          src="../public/images/Navbar/ic-head-mail.svg"
+                          alt=""
+                        />
+                        <span class="d-md-none text-white">Help Centre</span>
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a
+                        class="nav-link"
+                        href="video-tutorial.html"
+                        data-bs-toggle="tooltip"
+                        data-bs-placement="bottom"
+                        data-bs-custom-class="custom-tooltip"
+                        data-bs-title="Video Tutorials"
+                      >
+                        <img
+                          src="../public/images/Navbar/header-menu-video.svg"
+                          alt=""
+                        />
+                        <span class="d-md-none text-white"
+                          >Video Tutorials</span
+                        >
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a
+                        class="nav-link"
+                        href="wacc-result.html"
+                        data-bs-toggle="tooltip"
+                        data-bs-placement="bottom"
+                        data-bs-custom-class="custom-tooltip"
+                        data-bs-title="WACC Finder"
+                      >
+                        <img
+                          src="../public/images/Navbar/ic-head-orders.svg"
+                          alt=""
+                        />
+                        <span class="d-md-none text-white">WACC Finder</span>
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a
+                        class="nav-link"
+                        href="account.html"
+                        data-bs-toggle="tooltip"
+                        data-bs-placement="bottom"
+                        data-bs-custom-class="custom-tooltip"
+                        data-bs-title="Account"
+                      >
+                        <img
+                          src="../public/images/Navbar/header-menu-account.svg"
+                          alt=""
+                        />
+                        <span class="d-md-none text-white">Account</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="container">
+        <div class="row section">
+          <div class="col-lg-6">
+            <h1>Account Information</h1>
+            <p>
+              Manage your profile, WACCFinderTM results, security,
+              notifications, membership plans and billing details.
+            </p>
+          </div>
+        </div>
+        <div class="row justify-content-between section">
+          <div class="col-lg-3 mb-5 mb-md-0">
+            <div class="d-flex flex-column flex-shrink-0 p-0" id="sidebar">
+              <ul class="nav nav-pills flex-column mb-auto row-gap-2">
+                <li class="nav-item">
+                  <a href="account.html" class="nav-link active"
+                    >Account Information</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="wacc-result.html"
+                    class="nav-link link-body-emphasis"
+                  >
+                    WACCFinder<sup>TM</sup>
+                  </a>
+                </li>
+                <li>
+                  <a href="membership.html" class="nav-link link-body-emphasis"
+                    >Membership</a
+                  >
+                </li>
+                <li>
+                  <a href="security.html" class="nav-link link-body-emphasis">
+                    Security
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="notification.html"
+                    class="nav-link link-body-emphasis"
+                    >Notifications Settings</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="business-information.html"
+                    class="nav-link link-body-emphasis"
+                    >Business Information</a
+                  >
+                </li>
+              </ul>
+              <hr />
+              <ul class="nav nav-pills flex-column mb-auto">
+                <li class="nav-item">
+                  <a href="login.html" class="nav-link link-body-emphasis"
+                    >Sign Out</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-8" id="create-report">
+            <div class="profile-box-form">
+              <form action="#" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                  <label>Duration of cash flow</label>
+                  <select
+                    name="duration"
+                    class="form-select"
+                    title="Select duration of cash flow"
+                  >
+                    <option class="bs-title-option" value=""></option>
+                    <option selected="">1-5 years</option>
+                    <option>5 years and above</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label>Valuation date</label>
+                  <div class="row">
+                    <div class="col">
+                      <select
+                        name="month"
+                        class="form-select"
+                        title="Select month"
+                      >
+                        <option class="bs-title-option" value=""></option>
+                        <option value="01" selected="">January</option>
+                        <option value="02">February</option>
+                        <option value="03">March</option>
+                        <option value="04">April</option>
+                        <option value="05">May</option>
+                        <option value="06">June</option>
+                        <option value="07">July</option>
+                        <option value="08">August</option>
+                        <option value="09">September</option>
+                        <option value="10">October</option>
+                        <option value="11">November</option>
+                        <option value="12">December</option>
+                      </select>
+                    </div>
+                    <div class="col">
+                      <select
+                        name="year"
+                        class="form-select"
+                        title="Select year"
+                      >
+                        <option class="bs-title-option" value=""></option>
+                        <option selected="">2022</option>
+                        <option>2021</option>
+                        <option>2020</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>Country of operation</label>
+                  <select
+                    name="country"
+                    class="form-select"
+                    title="Select country"
+                  >
+                    <option class="bs-title-option" value=""></option>
+                    <option value="Albania" data-id="1" selected="">
+                      Albania
+                    </option>
+                    <option value="Andorra (Principality of)" data-id="2">
+                      Andorra (Principality of)
+                    </option>
+                    <option value="Angola" data-id="3">Angola</option>
+                    <option value="Argentina" data-id="4">Argentina</option>
+                    <option value="Armenia" data-id="5">Armenia</option>
+                    <option value="Aruba" data-id="6">Aruba</option>
+                    <option value="Australia" data-id="7">Australia</option>
+                    <option value="Austria" data-id="8">Austria</option>
+                    <option value="Azerbaijan" data-id="9">Azerbaijan</option>
+                    <option value="Bahamas" data-id="10">Bahamas</option>
+                    <option value="Bahrain" data-id="11">Bahrain</option>
+                    <option value="Bangladesh" data-id="12">Bangladesh</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label>Transactional currency</label>
+                  <select
+                    name="currency"
+                    class="form-select"
+                    title="Select currency"
+                  >
+                    <option class="bs-title-option" value=""></option>
+                    <option value="ALL" selected="">ALL</option>
+                    <option value="EUR">EUR</option>
+                    <option value="AON">AON</option>
+                    <option value="ARS">ARS</option>
+                    <option value="AMD">AMD</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label>Industry</label>
+                  <select
+                    name="industry"
+                    class="form-select"
+                    title="Select industry"
+                  >
+                    <option class="bs-title-option" value=""></option>
+                    <option value="Advertising">Advertising</option>
+                    <option value="Aerospace/Defense" selected="">
+                      Aerospace/Defense
+                    </option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label>Small cap premium</label>
+                  <select
+                    name="small_cap"
+                    class="form-select"
+                    title="Organization type"
+                  >
+                    <option class="bs-title-option" value=""></option>
+                    <option value="Above USD 2,445.7mil" selected="">
+                      Above USD 2,445.7mil
+                    </option>
+                    <option value="USD 2,445.7mil to USD 13,177.8mil">
+                      USD 2,445.7mil to USD 13,177.8mil
+                    </option>
+                    <option value="USD 452mil to USD 2,444.7mil">
+                      USD 452mil to USD 2,444.7mil
+                    </option>
+                    <option value="USD 2.2mil to USD 451.8mil">
+                      USD 2.2mil to USD 451.8mil
+                    </option>
+                  </select>
+                </div>
+                <div class="form-group percentage">
+                  <label>Pre-tax cost of debt</label>
+                  <input
+                    name="pre_tax"
+                    class="form-control"
+                    type="text"
+                    value="1"
+                  />
+                </div>
+                <div class="form-group percentage">
+                  <label>Corporate tax rate</label>
+                  <input
+                    name="tax"
+                    class="form-control"
+                    type="text"
+                    value="15"
+                  />
+                </div>
+                <div class="form-group percentage">
+                  <label>Market Capitalization And Debt To Equity Ratio</label>
+                  <input
+                    name="percent_debt"
+                    class="form-control"
+                    type="text"
+                    value="1"
+                  />
+                </div>
+                <h5>Supporting Documents</h5>
+                <div class="form-group">
+                  <label
+                    >Historical Revenue Summary By Country (Optional)</label
+                  >
+                  <div class="uploadfile">
+                    <input
+                      name="historical"
+                      class="inputfile"
+                      id="upload_revenue"
+                      type="file"
+                      title="Historical Revenue Summary"
+                    />
+                    <label
+                      class="btn btn-brown-gold btn-upload"
+                      for="upload_revenue"
+                      >Upload Document</label
+                    >
+                    <div class="box-preview">
+                      <div class="preview"></div>
+                      <div class="text"><span class="filename"></span></div>
+                      <button class="btn-delete" type="button">Hapus</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>Loan Agreement (Optional)</label>
+                  <div class="uploadfile">
+                    <input
+                      name="loan"
+                      class="inputfile"
+                      id="upload_loan"
+                      type="file"
+                      title="Loan Agreement"
+                    />
+                    <label
+                      class="btn btn-brown-gold btn-upload"
+                      for="upload_loan"
+                      >Upload Document</label
+                    >
+                    <div class="box-preview">
+                      <div class="preview"></div>
+                      <div class="text"><span class="filename"></span></div>
+                      <button class="btn-delete" type="button">Hapus</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>Balance Sheet (Compulsory)</label>
+                  <div class="uploadfile">
+                    <input
+                      name="balance"
+                      class="inputfile"
+                      id="upload_balance"
+                      type="file"
+                      title="Balance Sheet"
+                    />
+                    <label
+                      class="btn btn-brown-gold btn-upload"
+                      for="upload_balance"
+                      >Upload Document</label
+                    >
+                    <div class="box-preview">
+                      <div class="preview"></div>
+                      <div class="text"><span class="filename"></span></div>
+                      <button class="btn-delete" type="button">Hapus</button>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="form-action d-flex column-gap-3 justify-content-end"
+                >
+                  <a class="btn transparent-btn" href="#">Cancel</a>
+                  <button class="btn btn-brown-gold" type="submit">
+                    Submit
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer footer__secondary" id="login-footer">
+      <div class="container">
+        <div class="footer__wrap">
+          <div class="footer__top">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="footer__copyright text-center text-md-start">
+                  <p>© 2024 All rights reserved. Vallaris Private Limited</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="footer__logo">
+                  <a href="#"
+                    ><img
+                      class="ms-md-auto"
+                      src="../public/images/logo.png"
+                      alt="WACC Finder"
+                  /></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="footer__note">
+            <p>
+              VALLARIS refers to the VALLARIS network and/or one or more of its
+              member firms, each of which is a separate legal entity.
+            </p>
+            <p>
+              Content on this site is solely intended to provide general
+              information and does not provide any advice or create any
+              relationship, whether legally binding or otherwise. Please consult
+              your advisers for specific advice.
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/mklb.js"></script>
+    <script src="../public/js/main.js"></script>
+  </body>
+</html>
