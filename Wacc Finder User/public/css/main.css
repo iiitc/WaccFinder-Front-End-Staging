@@ -1318,7 +1318,7 @@ form .form-group .iti .iti__flag-container .iti__selected-flag {
   display: block;
 }
 #select-plan .plan__packets {
-  padding-top: 2rem;
+  padding-top: 6rem;
   padding-bottom: 1rem;
 }
 #select-plan .plan__packets .plan__footnote {
@@ -1339,7 +1339,21 @@ form .form-group .iti .iti__flag-container .iti__selected-flag {
 }
 #select-plan .plan__packets .plan__card.higlight {
   border: 3px solid #640000;
-  border-radius: 6px;
+  border-radius: 0px 0px 6px 6px;
+}
+#select-plan .plan__packets .plan__card.higlight .plan__card-title {
+  border-radius: 0 0 15px 15px;
+}
+#select-plan .plan__packets .plan__card.higlight .plan__card-title .popular-tag {
+  position: absolute;
+  top: -40px;
+  left: -3px;
+  background-color: #b5914f;
+  width: calc(100% + 6px);
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 #select-plan .plan__packets .plan__card .plan__card-title {
   padding: 1.2rem;
@@ -1356,14 +1370,19 @@ form .form-group .iti .iti__flag-container .iti__selected-flag {
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  flex-wrap: wrap;
+  align-content: center;
+  border-radius: 15px;
+  position: relative;
+  min-height: 180px;
 }
 #select-plan .plan__packets .plan__card .plan__card-title sup {
   font-size: 12px;
 }
-#select-plan .plan__packets .plan__card .plan__card-title span {
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
+#select-plan .plan__packets .plan__card .plan__card-title h4 {
+  color: #fff;
+  width: 100%;
+  margin-bottom: 20px;
 }
 #select-plan .plan__packets .plan__card .plan__card-title p {
   color: #fff;
@@ -1398,10 +1417,33 @@ form .form-group .iti .iti__flag-container .iti__selected-flag {
   color: #b74f6f;
 }
 #select-plan .plan__packets .plan__card .plan__card-body .plan__card-heading .price {
-  font-size: 1.3125rem;
+  font-size: 44px;
   line-height: 1.5em;
   color: #000;
   font-weight: 700;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  column-gap: 10px;
+  min-height: 100px;
+  margin-bottom: 30px;
+}
+#select-plan .plan__packets .plan__card .plan__card-body .plan__card-heading .price p {
+  font-size: 22px;
+  line-height: 1.5em;
+  font-weight: bold;
+  padding-top: 10px;
+}
+#select-plan .plan__packets .plan__card .plan__card-body .plan__card-heading .price small {
+  font-size: 18px;
+  line-height: 24px;
+}
+#select-plan .plan__packets .plan__card .plan__card-body .plan__card-heading .transparent-text {
+  color: transparent;
+}
+#select-plan .plan__packets .plan__card .plan__card-body .plan__card-list {
+  margin-top: 50px;
 }
 #select-plan .plan__packets .plan__card .plan__card-body .plan__card-list > ul {
   margin-bottom: 1.25rem;

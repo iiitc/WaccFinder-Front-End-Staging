@@ -1451,7 +1451,7 @@ form {
     }
   }
   .plan__packets {
-    padding-top: 2rem;
+    padding-top: 6rem;
     padding-bottom: 1rem;
 
     .plan__footnote {
@@ -1473,7 +1473,21 @@ form {
       min-height: 100%;
       &.higlight {
         border: 3px solid $wacc-red;
-        border-radius: 6px;
+        border-radius: 0px 0px 6px 6px;
+        .plan__card-title {
+          border-radius: 0 0 15px 15px;
+          .popular-tag {
+            position: absolute;
+            top: -40px;
+            left: -3px;
+            background-color: $brown-gold;
+            width: calc(100% + 6px);
+            min-height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+        }
       }
       .plan__card-title {
         padding: 1.2rem;
@@ -1490,13 +1504,18 @@ form {
         -webkit-justify-content: center;
         -ms-flex-pack: center;
         justify-content: center;
+        flex-wrap: wrap;
+        align-content: center;
+        border-radius: 15px;
+        position: relative;
+        min-height: 180px;
         sup {
           font-size: 12px;
         }
-        span {
-          -webkit-flex: 1;
-          -ms-flex: 1;
-          flex: 1;
+        h4 {
+          color: #fff;
+          width: 100%;
+          margin-bottom: 20px;
         }
         p {
           color: #fff;
@@ -1530,13 +1549,34 @@ form {
             color: #b74f6f;
           }
           .price {
-            font-size: 1.3125rem;
+            font-size: 44px;
             line-height: 1.5em;
             color: $text-color;
             font-weight: 700;
+            display: flex;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+            column-gap: 10px;
+            min-height: 100px;
+            margin-bottom: 30px;
+            p {
+              font-size: 22px;
+              line-height: 1.5em;
+              font-weight: bold;
+              padding-top: 10px;
+            }
+            small {
+              font-size: 18px;
+              line-height: 24px;
+            }
+          }
+          .transparent-text {
+            color: transparent;
           }
         }
         .plan__card-list {
+          margin-top: 50px;
           > ul {
             margin-bottom: 1.25rem;
             list-style: none;
