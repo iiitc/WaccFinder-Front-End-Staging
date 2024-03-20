@@ -169,14 +169,14 @@ h2 {
   letter-spacing: -0.05rem;
   line-height: 1.4em;
   font-size: 3rem;
-  color: rgb(29, 46, 59);
+  color: $blue-black;
 }
 
 h3 {
   letter-spacing: -0.05rem;
   line-height: 1.4em;
   font-size: 2.5rem;
-  color: rgb(29, 46, 59);
+  color: $blue-black;
 }
 
 p,
@@ -395,7 +395,7 @@ form {
     z-index: 2;
     .navbar-brand {
       img {
-        max-width: 200px;
+        max-width: 250px;
       }
     }
     .navbar-nav {
@@ -423,6 +423,8 @@ form {
   #sidebar {
     .nav-pills .nav-link {
       padding: 0.8rem 1rem;
+      font-weight: 600;
+      font-size: 1.3rem;
     }
     .nav-pills .nav-link:hover,
     .nav-pills .nav-link.active,
@@ -446,6 +448,11 @@ form {
     width: 100%;
     max-width: 400px;
     padding: 7rem 1rem;
+    h1,
+    p {
+      text-align: center;
+      color: $grey_242;
+    }
     .login-logo {
       img {
         max-height: 2rem;
@@ -455,7 +462,8 @@ form {
     }
     form {
       padding: 2rem;
-      background: $card-bg-grey;
+      background: $blue-black;
+      color: $grey_242;
       border-radius: 6px;
       border: 1px solid rgb(41 41 41 / 15%);
       box-shadow: 0px 20px 25px -5px rgba(0, 0, 0, 0.1),
@@ -495,6 +503,9 @@ form {
         color: $brown-gold;
         font-weight: 500;
       }
+      p {
+        color: $blue-black;
+      }
     }
   }
   form.form-signin {
@@ -524,12 +535,12 @@ form {
         color: $blue-black;
         background-color: #ffffff;
         background-clip: padding-box;
-        border: 1px solid $input-border;
+        border: 1px solid $grey_249;
         border-radius: 0.5rem;
         transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
       }
       .form-select {
-        border-color: $input-border;
+        border-color: $grey_249;
       }
       #phone-num {
         padding-left: 90px;
@@ -819,7 +830,7 @@ form {
         .full-name {
           font-weight: 500;
           margin-bottom: 0;
-          font-size: 2.25rem;
+          font-size: 2rem;
           line-height: 1.333em;
         }
         .acc-stat {
@@ -904,12 +915,12 @@ form {
         color: #000;
         background-color: #fff;
         background-clip: padding-box;
-        border: 1px solid $input-border;
+        border: 1px solid $grey_249;
         border-radius: 0.5rem;
         transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
       }
       .form-select {
-        border-color: $input-border;
+        border-color: $grey_249;
       }
       #phone-num {
         padding-left: 90px;
@@ -1107,7 +1118,8 @@ form {
       font-size: 0.875rem;
       line-height: 1.429em;
       display: block;
-      color: $text-color-light;
+      color: $text-color;
+      font-weight: 600;
     }
     .wacc__card-top {
       margin-bottom: 1rem;
@@ -1262,7 +1274,7 @@ form {
         color: $text-color;
         background-color: #fff;
         background-clip: padding-box;
-        border: 1px solid $input-border;
+        border: 1px solid $grey_249;
         border-radius: 0.5rem;
         transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
       }
@@ -1328,7 +1340,7 @@ form {
         color: $text-color;
         background-color: #fff;
         background-clip: padding-box;
-        border: 1px solid $input-border;
+        border: 1px solid $grey_249;
         border-radius: 0.5rem;
         transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
       }
@@ -1979,15 +1991,15 @@ form {
         position: relative;
         .number {
           display: block;
-          width: 2rem;
-          height: 2rem;
+          width: 4rem;
+          height: 4rem;
           margin: 0 auto 0.5rem;
-          padding: 0.25rem 0.6875rem;
+          padding: 1.25rem 0.6875rem;
           border: 1px solid $input-border;
           border-radius: 50px;
         }
         &.current {
-          color: #fff;
+          // color: #fff;
           .number {
             background: $brown-gold;
             border-color: $brown-gold;
@@ -2000,8 +2012,8 @@ form {
           height: 1px;
           background: #000;
           position: absolute;
-          top: 0.9375rem;
-          left: calc(100% - 1.5625rem);
+          top: 1.9375rem;
+          left: calc(100% - 1.22rem);
         }
       }
       .col-lg-4 {
@@ -2046,17 +2058,18 @@ form {
           }
           .row {
             margin: 0 auto;
-            max-width: 14rem;
+            max-width: 22rem;
             .col {
               padding-left: 0.5rem;
               padding-right: 0.5rem;
               .form-control {
-                width: 2.5rem;
-                height: 2.5rem;
+                width: 4.5rem;
+                height: 4.5rem;
                 margin-right: 0;
-                border-radius: 50px;
+                // border-radius: 50px;
                 padding: 0.5rem;
                 text-align: center;
+                border: 1px solid $grey_249;
               }
             }
           }
@@ -2082,7 +2095,8 @@ form {
   .nav-pills {
     .nav-link {
       text-align: left;
-      color: $brown-gold;
+      color: $blue-black;
+      font-weight: 600;
       &.active {
         background-color: $brown-gold;
         color: #fff;
@@ -2309,7 +2323,7 @@ form {
   }
   .footer__logo {
     img {
-      max-width: 200px;
+      max-width: 250px;
       display: block;
     }
   }

@@ -132,14 +132,14 @@ h2 {
   letter-spacing: -0.05rem;
   line-height: 1.4em;
   font-size: 3rem;
-  color: rgb(29, 46, 59);
+  color: #121820;
 }
 
 h3 {
   letter-spacing: -0.05rem;
   line-height: 1.4em;
   font-size: 2.5rem;
-  color: rgb(29, 46, 59);
+  color: #121820;
 }
 
 p,
@@ -340,7 +340,7 @@ form .form-group .iti .iti__flag-container .iti__selected-flag {
   z-index: 2;
 }
 #main_header .navbar .navbar-brand img {
-  max-width: 200px;
+  max-width: 250px;
 }
 #main_header .navbar .navbar-nav .nav-item .nav-link span {
   color: #fff;
@@ -359,6 +359,8 @@ form .form-group .iti .iti__flag-container .iti__selected-flag {
 }
 .main #sidebar .nav-pills .nav-link {
   padding: 0.8rem 1rem;
+  font-weight: 600;
+  font-size: 1.3rem;
 }
 .main #sidebar .nav-pills .nav-link:hover,
 .main #sidebar .nav-pills .nav-link.active,
@@ -382,6 +384,11 @@ form .form-group .iti .iti__flag-container .iti__selected-flag {
   max-width: 400px;
   padding: 7rem 1rem;
 }
+#login .form-signin h1,
+#login .form-signin p {
+  text-align: center;
+  color: #f2f2f2;
+}
 #login .form-signin .login-logo img {
   max-height: 2rem;
   display: block;
@@ -389,7 +396,8 @@ form .form-group .iti .iti__flag-container .iti__selected-flag {
 }
 #login .form-signin form {
   padding: 2rem;
-  background: #f9f9f9;
+  background: #121820;
+  color: #f2f2f2;
   border-radius: 6px;
   border: 1px solid rgba(41, 41, 41, 0.15);
   box-shadow: 0px 20px 25px -5px rgba(0, 0, 0, 0.1), 0px 10px 10px -5px rgba(0, 0, 0, 0.04);
@@ -427,6 +435,9 @@ form .form-group .iti .iti__flag-container .iti__selected-flag {
   color: #b5914f;
   font-weight: 500;
 }
+#login .form-signin .newmem p {
+  color: #121820;
+}
 #login form.form-signin .form-group {
   margin-bottom: 1.5rem;
   position: relative;
@@ -454,12 +465,12 @@ form .form-group .iti .iti__flag-container .iti__selected-flag {
   color: #121820;
   background-color: #ffffff;
   background-clip: padding-box;
-  border: 1px solid #9da2ab;
+  border: 1px solid #001b4b;
   border-radius: 0.5rem;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 #login form.form-signin .form-group .form-select {
-  border-color: #9da2ab;
+  border-color: #001b4b;
 }
 #login form.form-signin .form-group #phone-num {
   padding-left: 90px;
@@ -734,7 +745,7 @@ form .form-group .iti .iti__flag-container .iti__selected-flag {
 #account .profile-info .profile-detail .profile-name .full-name {
   font-weight: 500;
   margin-bottom: 0;
-  font-size: 2.25rem;
+  font-size: 2rem;
   line-height: 1.333em;
 }
 #account .profile-info .profile-detail .profile-name .acc-stat {
@@ -812,12 +823,12 @@ form .form-group .iti .iti__flag-container .iti__selected-flag {
   color: #000;
   background-color: #fff;
   background-clip: padding-box;
-  border: 1px solid #9da2ab;
+  border: 1px solid #001b4b;
   border-radius: 0.5rem;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 #account.account-edit .form-group .form-select {
-  border-color: #9da2ab;
+  border-color: #001b4b;
 }
 #account.account-edit .form-group #phone-num {
   padding-left: 90px;
@@ -1003,7 +1014,8 @@ form .form-group .iti .iti__flag-container .iti__selected-flag {
   font-size: 0.875rem;
   line-height: 1.429em;
   display: block;
-  color: #3d3d3d;
+  color: #000;
+  font-weight: 600;
 }
 #wacc .wacc__card .wacc__card-top {
   margin-bottom: 1rem;
@@ -1149,7 +1161,7 @@ form .form-group .iti .iti__flag-container .iti__selected-flag {
   color: #000;
   background-color: #fff;
   background-clip: padding-box;
-  border: 1px solid #9da2ab;
+  border: 1px solid #001b4b;
   border-radius: 0.5rem;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
@@ -1208,7 +1220,7 @@ form .form-group .iti .iti__flag-container .iti__selected-flag {
   color: #000;
   background-color: #fff;
   background-clip: padding-box;
-  border: 1px solid #9da2ab;
+  border: 1px solid #001b4b;
   border-radius: 0.5rem;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
@@ -1821,15 +1833,12 @@ form .form-group .iti .iti__flag-container .iti__selected-flag {
 }
 #activation .activation .auth__stepper .step .number {
   display: block;
-  width: 2rem;
-  height: 2rem;
+  width: 4rem;
+  height: 4rem;
   margin: 0 auto 0.5rem;
-  padding: 0.25rem 0.6875rem;
+  padding: 1.25rem 0.6875rem;
   border: 1px solid #9da2ab;
   border-radius: 50px;
-}
-#activation .activation .auth__stepper .step.current {
-  color: #fff;
 }
 #activation .activation .auth__stepper .step.current .number {
   background: #b5914f;
@@ -1842,8 +1851,8 @@ form .form-group .iti .iti__flag-container .iti__selected-flag {
   height: 1px;
   background: #000;
   position: absolute;
-  top: 0.9375rem;
-  left: calc(100% - 1.5625rem);
+  top: 1.9375rem;
+  left: calc(100% - 1.22rem);
 }
 #activation .activation .auth__stepper .col-lg-4:last-child .step::after {
   content: unset;
@@ -1879,19 +1888,19 @@ form .form-group .iti .iti__flag-container .iti__selected-flag {
 }
 #activation .activation.activation-step-2 .auth__verifcode .form-group .row {
   margin: 0 auto;
-  max-width: 14rem;
+  max-width: 22rem;
 }
 #activation .activation.activation-step-2 .auth__verifcode .form-group .row .col {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
 }
 #activation .activation.activation-step-2 .auth__verifcode .form-group .row .col .form-control {
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 4.5rem;
+  height: 4.5rem;
   margin-right: 0;
-  border-radius: 50px;
   padding: 0.5rem;
   text-align: center;
+  border: 1px solid #001b4b;
 }
 #activation .activation.activation-step-2 .auth__verifcode .auth__verifcode .resend {
   color: #8a8a8a;
@@ -1908,7 +1917,8 @@ form .form-group .iti .iti__flag-container .iti__selected-flag {
 }
 #helpcenter .nav-pills .nav-link {
   text-align: left;
-  color: #b5914f;
+  color: #121820;
+  font-weight: 600;
 }
 #helpcenter .nav-pills .nav-link.active {
   background-color: #b5914f;
@@ -2126,7 +2136,7 @@ form .form-group .iti .iti__flag-container .iti__selected-flag {
   color: #fff;
 }
 #login-footer .footer__logo img {
-  max-width: 200px;
+  max-width: 250px;
   display: block;
 }
 #login-footer .footer__note p {
