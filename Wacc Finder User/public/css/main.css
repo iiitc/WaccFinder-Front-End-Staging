@@ -697,7 +697,7 @@ form .form-group .iti .iti__flag-container .iti__selected-flag {
   border-color: #640000 !important;
 }
 #login .error-message {
-  color: #640000;
+  color: #fff;
   font-size: 0.8rem;
   margin-top: 5px;
 }
@@ -2000,14 +2000,18 @@ form .form-group .iti .iti__flag-container .iti__selected-flag {
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s;
-  background: url(../images/ic-delete-bin.png) no-repeat center;
+  background: url(../images/ic-delete-bin.svg) no-repeat center;
   background-size: contain;
   font-size: 0;
   line-height: 0;
   border: 0;
 }
+#create-report .profile-box-form .uploadfile.has-file {
+  height: auto;
+}
 #create-report .profile-box-form .uploadfile.has-file .box-preview {
   margin-top: 1rem;
+  margin-bottom: 0;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;

@@ -36,7 +36,12 @@
           <div class="col-12">
             <nav class="navbar navbar-expand-md">
               <div class="container-fluid">
-                <a class="navbar-brand" href="/components/get-started.html">
+                <a
+                  class="navbar-brand"
+                  href="/components/get-started.html"
+                  data-bs-toggle="modal"
+                  data-bs-target="#modalLimit"
+                >
                   <img src="../public/images/logo.png" alt="WACC Finder" />
                 </a>
                 <button
@@ -259,10 +264,63 @@
               <a
                 href="#"
                 class="btn btn-deactivate"
-                data-toggle="modal"
-                data-target="#modalDeactivation"
+                data-bs-toggle="modal"
+                data-bs-target="#modalDeactivation"
                 >Account Deactivation</a
               >
+            </div>
+
+            <div class="modal" id="modalDeactivation">
+              <div class="modal-dialog modal-dialog-centered modal-md">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <b>Deactivation Account</b>
+                    <div
+                      class="btn-close"
+                      href="#"
+                      data-bs-dismiss="modal"
+                    ></div>
+                  </div>
+                  <div class="modal-body">
+                    <form>
+                      <div class="form-group mb-4">
+                        <label>I'm leaving because</label>
+                        <select
+                          name="reason"
+                          class="form-select mt-1"
+                          title="Select reason"
+                          required=""
+                        >
+                          <option value="">Select a reason</option>
+                          <option value="Not user-friendly">
+                            Not user-friendly
+                          </option>
+                          <option value="Too expensive">Too expensive</option>
+                          <option value="Lack of features">
+                            Lack of features
+                          </option>
+                          <option value="Technical issues">
+                            Technical issues
+                          </option>
+                        </select>
+                      </div>
+                      <div
+                        class="form-action d-flex justify-content-end column-gap-3"
+                      >
+                        <a
+                          class="btn transparent-btn"
+                          href="#"
+                          data-bs-dismiss="modal"
+                          >Cancel</a
+                        >
+                        <button class="btn btn-deactivate" type="submit">
+                          Deactivate account
+                        </button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -306,6 +364,28 @@
         </div>
       </div>
     </footer>
+
+    <div class="modal" id="modalLimit">
+      <div class="modal-dialog modal-dialog-centered modal-md">
+        <div class="modal-content">
+          <div class="modal-header">
+            <b>Quota limit reached</b>
+            <div class="btn-close" href="#" data-bs-dismiss="modal"></div>
+          </div>
+          <div class="modal-body text-center">
+            <p>
+              You have reached your Business Account Quota.
+              <a href="/select-plan" class="transparent-btn">Learn more</a>
+            </p>
+          </div>
+          <div class="modal-footer">
+            <div class="form-action">
+              <a class="btn btn-brown-gold" href="#">Upgrade to Enterprise</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>

@@ -783,7 +783,7 @@ form {
   }
 
   .error-message {
-    color: $wacc-red;
+    color: #fff;
     font-size: 0.8rem;
     margin-top: 5px;
   }
@@ -2160,6 +2160,7 @@ form {
       padding: 0.25rem;
       height: 2.5rem;
       margin-bottom: 4px;
+      // overflow: hidden;
       .inputfile {
         position: absolute;
         top: 0;
@@ -2180,15 +2181,17 @@ form {
         opacity: 0;
         visibility: hidden;
         transition: all 0.3s;
-        background: url(../images/ic-delete-bin.png) no-repeat center;
+        background: url(../images/ic-delete-bin.svg) no-repeat center;
         background-size: contain;
         font-size: 0;
         line-height: 0;
         border: 0;
       }
       &.has-file {
+        height: auto;
         .box-preview {
           margin-top: 1rem;
+          margin-bottom: 0;
           display: -webkit-flex;
           display: -ms-flexbox;
           display: flex;

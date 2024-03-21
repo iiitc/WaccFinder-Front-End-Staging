@@ -218,6 +218,125 @@ $(document).ready(function () {
   }
 
   /**
+   * Create Report Page Script
+   */
+  if ($("#create-report").length > 0) {
+    function updatePreview(input, preview, filename) {
+      if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+          $(preview).css("background-image", "url(" + e.target.result + ")");
+        };
+
+        reader.readAsDataURL(input.files[0]);
+        $(filename).text(input.files[0].name);
+      } else {
+        $(preview).css("background-image", "none");
+        $(filename).text("");
+      }
+    }
+    $("#create-report-form").validate({
+      rules: {
+        duration: {
+          required: true,
+        },
+        month: {
+          required: true,
+        },
+        year: {
+          required: true,
+        },
+        country: {
+          required: true,
+        },
+        currency: {
+          required: true,
+        },
+        industry: {
+          required: true,
+        },
+        small_cap: {
+          required: true,
+        },
+        pre_tax: {
+          required: true,
+        },
+        tax: {
+          required: true,
+        },
+        percent_debt: {
+          required: true,
+        },
+        balance: {
+          // Validation for Balance Sheet
+          required: true,
+        },
+      },
+      messages: {
+        duration: {
+          required: "Please select a Duration",
+        },
+        month: {
+          required: "Please select a Month",
+        },
+        year: {
+          required: "Please select a Year",
+        },
+        country: {
+          required: "Please select a Country",
+        },
+        currency: {
+          required: "Please select a Currency",
+        },
+        industry: {
+          required: "Please select an Industry",
+        },
+        small_cap: {
+          required: "Please select an Organization Type",
+        },
+        pre_tax: {
+          required: "Please enter Pre-tax cost of debt",
+        },
+        tax: {
+          required: "Please enter Corporate tax rate",
+        },
+        percent_debt: {
+          required:
+            "Please enter Market Capitalization And Debt To Equity Ratio",
+        },
+        balance: {
+          // Validation message for Balance Sheet
+          required: "Please upload Balance Sheet",
+        },
+      },
+      submitHandler: function (form) {
+        form.submit();
+      },
+    });
+
+    // Event listener for file inputs
+    $(".inputfile").change(function () {
+      var preview = $(this).closest(".uploadfile").find(".preview");
+      var filename = $(this).closest(".uploadfile").find(".filename");
+      $(this).closest(".uploadfile").addClass("has-file");
+      updatePreview(this, preview, filename);
+    });
+
+    // Event listener for delete button
+    $(".btn-delete").click(function () {
+      var preview = $(this).closest(".uploadfile").find(".preview");
+      var filename = $(this).closest(".uploadfile").find(".filename");
+      var input = $(this).closest(".uploadfile").find(".inputfile");
+      $(this).closest(".uploadfile").removeClass("has-file");
+
+      $(preview).css("background-image", "none");
+      $(filename).text("");
+      $(input).val("");
+    });
+  }
+
+  /**
    * Business Info Page Script
    */
   if ($("#business-information").length > 0) {
