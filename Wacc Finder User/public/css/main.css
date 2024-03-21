@@ -379,6 +379,42 @@ form .form-group .iti .iti__flag-container .iti__selected-flag {
   justify-content: center;
   align-items: center;
 }
+#login .form-forgot {
+  width: 100%;
+  max-width: 400px;
+  padding: 7rem 1rem;
+}
+#login .form-forgot h1 {
+  font-size: 2.3rem;
+}
+#login .form-forgot h1,
+#login .form-forgot p {
+  text-align: center;
+  color: #f2f2f2;
+}
+#login .form-forgot .login-logo img {
+  max-height: 2rem;
+  display: block;
+  margin: 0 auto 2.5rem;
+}
+#login .form-forgot form {
+  padding: 2rem;
+  background: #121820;
+  color: #f2f2f2;
+  border-radius: 6px;
+  border: 1px solid rgba(41, 41, 41, 0.15);
+  box-shadow: 0px 20px 25px -5px rgba(0, 0, 0, 0.1), 0px 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+#login .form-forgot form .form-control:focus {
+  border-color: #b5914f;
+  box-shadow: 0 0 0 0.25rem rgba(181, 145, 79, 0.25);
+}
+#login .form-forgot .form-floating:focus-within {
+  z-index: 2;
+}
+#login .form-forgot button {
+  font-weight: 600;
+}
 #login .form-signin {
   width: 100%;
   max-width: 400px;
@@ -697,6 +733,136 @@ form .form-group .iti .iti__flag-container .iti__selected-flag {
   border-color: #640000 !important;
 }
 #login .error-message {
+  color: #fff;
+  font-size: 0.8rem;
+  margin-top: 5px;
+}
+
+/**
+* Forgot Password Page CSS
+*/
+#forgot-pass {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#forgot-pass .form-forgot {
+  width: 100%;
+  max-width: 400px;
+  padding: 7rem 1rem;
+}
+#forgot-pass .form-forgot h1 {
+  font-size: 2.3rem;
+}
+#forgot-pass .form-forgot h1,
+#forgot-pass .form-forgot p {
+  text-align: center;
+  color: #f2f2f2;
+}
+#forgot-pass .form-forgot .login-logo img {
+  max-height: 2rem;
+  display: block;
+  margin: 0 auto 2.5rem;
+}
+#forgot-pass .form-forgot form {
+  padding: 2rem;
+  background: #121820;
+  color: #f2f2f2;
+  border-radius: 6px;
+  border: 1px solid rgba(41, 41, 41, 0.15);
+  box-shadow: 0px 20px 25px -5px rgba(0, 0, 0, 0.1), 0px 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+#forgot-pass .form-forgot form .form-control:focus {
+  border-color: #b5914f;
+  box-shadow: 0 0 0 0.25rem rgba(181, 145, 79, 0.25);
+}
+#forgot-pass .form-forgot .form-floating:focus-within {
+  z-index: 2;
+}
+#forgot-pass .form-forgot button {
+  font-weight: 600;
+}
+#forgot-pass .error-input {
+  border-color: #640000 !important;
+}
+#forgot-pass .error-message {
+  color: #fff;
+  font-size: 0.8rem;
+  margin-top: 5px;
+}
+
+/**
+* Reset Password Page CSS
+*/
+#reset-pass {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#reset-pass .form-reset {
+  width: 100%;
+  max-width: 400px;
+  padding: 7rem 1rem;
+}
+#reset-pass .form-reset h1 {
+  font-size: 2.3rem;
+}
+#reset-pass .form-reset h1,
+#reset-pass .form-reset p {
+  text-align: center;
+  color: #f2f2f2;
+}
+#reset-pass .form-reset .login-logo img {
+  max-height: 2rem;
+  display: block;
+  margin: 0 auto 2.5rem;
+}
+#reset-pass .form-reset form {
+  padding: 2rem;
+  background: #121820;
+  color: #f2f2f2;
+  border-radius: 6px;
+  border: 1px solid rgba(41, 41, 41, 0.15);
+  box-shadow: 0px 20px 25px -5px rgba(0, 0, 0, 0.1), 0px 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+#reset-pass .form-reset form .form-group {
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+#reset-pass .form-reset form .form-group.inpt-pass .sh {
+  position: absolute;
+  top: 2.125rem;
+  right: 0.5rem;
+  color: #8a8a8a;
+  font-size: 0;
+  line-height: 0;
+  width: 1.5rem;
+  line-height: 1.5rem;
+  background: url(../images/login/ic-show-pw.svg) no-repeat center;
+  background-size: contain;
+  cursor: pointer;
+}
+#reset-pass .form-reset form .form-group.inpt-pass.show .sh {
+  background: url(../images/login/ic-hide-pw.svg) no-repeat center;
+}
+#reset-pass .form-reset form .form-control:focus {
+  border-color: #b5914f;
+  box-shadow: 0 0 0 0.25rem rgba(181, 145, 79, 0.25);
+}
+#reset-pass .form-reset .form-floating:focus-within {
+  z-index: 2;
+}
+#reset-pass .form-reset button {
+  font-weight: 600;
+}
+#reset-pass .error-input {
+  border-color: #640000 !important;
+}
+#reset-pass .error-message {
   color: #fff;
   font-size: 0.8rem;
   margin-top: 5px;

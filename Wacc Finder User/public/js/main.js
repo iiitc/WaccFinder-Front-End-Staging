@@ -72,46 +72,95 @@ if (document.getElementById("main_header")) {
   });
 }
 
-// Function to get user initials
-function getUserInitials(name) {
-  var initials = name.match(/\b\w/g) || [];
-  initials = ((initials.shift() || "") + (initials.pop() || "")).toUpperCase();
-  return initials;
-}
-
-// Function to validate email address format
-function isValidEmail(email) {
-  var emailRegex = /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/;
-  return emailRegex.test(email);
-}
-
 $(document).ready(function () {
+  // Function to get user initials
+  function getUserInitials(name) {
+    var initials = name.match(/\b\w/g) || [];
+    initials = (
+      (initials.shift() || "") + (initials.pop() || "")
+    ).toUpperCase();
+    return initials;
+  }
+
+  // Function to validate email address format
+  function isValidEmail(email) {
+    var emailRegex = /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/;
+    return emailRegex.test(email);
+  }
+
+  // Function to Show/Hide password
+  function initializeShowHide() {
+    $(".sh").click(function () {
+      var $input = $(this).prev("input");
+      var $form_group = $(this).closest(".form-group.inpt-pass");
+      if ($input.attr("type") === "password") {
+        $input.attr("type", "text");
+        $(this).text("Hide");
+        $form_group.addClass("show");
+      } else {
+        $input.attr("type", "password");
+        $(this).text("Show");
+        $form_group.removeClass("show");
+      }
+    });
+  }
+
+  // Function to validate email using regex
+  function validateEmail(email) {
+    var re =
+      /^(([^<>()\[\]\\.,;:\s@\"]+(\.[^<>()\[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+  }
+
+  // Function to add error display
+  function addError(element, message) {
+    element.addClass("error-input");
+    element.next(".error-message").remove(); // Remove existing message to prevent duplicates
+    var errorMessage = $('<div class="error-message">' + message + "</div>");
+    element.after(errorMessage);
+  }
+
+  // Function to remove error display
+  function removeError(element) {
+    element.removeClass("error-input");
+    element.next(".error-message").remove();
+  }
+  initializeShowHide();
+
   /**
    * Login Page Script
    */
   if ($("#login").length > 0) {
-    // Function to validate email using regex
-    function validateEmail(email) {
-      var re =
-        /^(([^<>()\[\]\\.,;:\s@\"]+(\.[^<>()\[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-      return re.test(email);
-    }
+    // Attach input event listeners to email and password fields
+    $('input[name="email"], input[name="password"]').on("input", function () {
+      var emailValue = $('input[name="email"]').val().trim();
+      var passwordValue = $('input[name="password"]').val().trim();
+      var isValid = true;
 
-    // Function to add error display
-    function addError(element, message) {
-      element.addClass("error-input");
-      element.next(".error-message").remove(); // Remove existing message to prevent duplicates
-      var errorMessage = $('<div class="error-message">' + message + "</div>");
-      element.after(errorMessage);
-    }
+      // Validate Email
+      if (emailValue.length > 0 && !validateEmail(emailValue)) {
+        addError(
+          $('input[name="email"]'),
+          "Please enter a valid email address."
+        );
+        isValid = false;
+      } else {
+        removeError($('input[name="email"]'));
+      }
 
-    // Function to remove error display
-    function removeError(element) {
-      element.removeClass("error-input");
-      element.next(".error-message").remove();
-    }
+      // Validate Password
+      if (passwordValue.length > 0 && passwordValue.length < 8) {
+        addError(
+          $('input[name="password"]'),
+          "Your password must be at least 8 characters long."
+        );
+        isValid = false;
+      } else {
+        removeError($('input[name="password"]'));
+      }
+    });
 
-    // Attach click event handler to the button
+    // Attach click event handler to the Sign In button
     $("#signin").click(function (e) {
       e.preventDefault(); // Prevent default form submission
 
@@ -149,11 +198,141 @@ $(document).ready(function () {
       // If all validations pass, submit the form
       if (isValid) {
         this.submit();
-        // Perform form submission
-        // For example:
-        // $('#loginForm').submit();
       }
     });
+
+    // Attach click event handler to the Forgot Password button
+    $("#forgot").click(function (e) {
+      e.preventDefault(); // Prevent default form submission
+
+      // Clear any previous error states and messages
+      $(".error-input").removeClass("error-input");
+      $(".error-message").remove();
+
+      // Get input values
+      var email = $('input[name="email"]').val().trim();
+
+      var isValid = true;
+
+      // Validate Email
+      if (email.length === 0) {
+        addError($('input[name="email"]'), "Please enter an email address.");
+        isValid = false;
+      } else if (!validateEmail(email)) {
+        addError(
+          $('input[name="email"]'),
+          "Please enter a valid email address."
+        );
+        isValid = false;
+      }
+
+      // If all validations pass, submit the form
+      if (isValid) {
+        this.submit();
+      }
+    });
+  }
+
+  /**
+   * Reset Password Page Script
+   */
+  if ($("#reset-pass").length > 0) {
+    $("form").submit(function (e) {
+      e.preventDefault(); // Prevent default form submission
+
+      // Clear any previous error states and messages
+      $(".error-input").removeClass("error-input");
+      $(".error-message").remove();
+
+      // Get form inputs
+      var currentPassword = $('input[name="current_password"]').val().trim();
+      var newPassword = $('input[name="password"]').val().trim();
+      var confirmPassword = $('input[name="password_confirmation"]')
+        .val()
+        .trim();
+
+      var isValid = true;
+
+      // Validate Current Password
+      if (currentPassword.length === 0) {
+        addError(
+          $('input[name="current_password"]'),
+          "Please enter your current password."
+        );
+        isValid = false;
+      }
+
+      // Validate New Password
+      if (newPassword.length < 8) {
+        addError(
+          $('input[name="password"]'),
+          "Your new password must be at least 8 characters long."
+        );
+        isValid = false;
+      }
+
+      // Validate Password Confirmation
+      if (confirmPassword !== newPassword) {
+        addError(
+          $('input[name="password_confirmation"]'),
+          "Passwords do not match."
+        );
+        isValid = false;
+      }
+
+      // If all validations pass, submit the form
+      if (isValid) {
+        this.submit();
+      }
+    });
+
+    // Function to add error display
+    function addError(element, message) {
+      element.addClass("error-input");
+      var errorMessage = $('<div class="error-message">' + message + "</div>");
+      element.after(errorMessage);
+
+      // Add event listener to validate input on change
+      element.on("input", function () {
+        var inputValue = $(this).val().trim();
+        var fieldName = $(this).attr("name");
+        var errorElement = $(this).siblings(".error-message");
+        var errorMessage = "";
+
+        // Validate the input based on field name
+        switch (fieldName) {
+          case "current_password":
+            errorMessage =
+              inputValue.length === 0
+                ? "Please enter your current password."
+                : "";
+            break;
+          case "password":
+            errorMessage =
+              inputValue.length < 8
+                ? "Your new password must be at least 8 characters long."
+                : "";
+            break;
+          case "password_confirmation":
+            errorMessage =
+              inputValue !== $('input[name="password"]').val().trim()
+                ? "Passwords do not match."
+                : "";
+            break;
+          default:
+            break;
+        }
+
+        // Update error message and error state
+        if (errorMessage) {
+          element.addClass("error-input");
+          errorElement.text(errorMessage);
+        } else {
+          element.removeClass("error-input");
+          errorElement.text("");
+        }
+      });
+    }
   }
 
   /**
@@ -375,9 +554,28 @@ $(document).ready(function () {
           required: "Please select a business industry",
         },
       },
-      submitHandler: function (form) {
-        form.submit();
+      errorPlacement: function (error, element) {
+        // Display error messages in a custom manner
+        error.appendTo(element.closest(".form-group"));
       },
+      highlight: function (element) {
+        // Add error class to the parent form-group when validation fails
+        $(element).closest(".form-group").addClass("error-input");
+      },
+      unhighlight: function (element) {
+        // Remove error class from the parent form-group when validation succeeds
+        $(element).closest(".form-group").removeClass("error-input");
+      },
+    });
+
+    // Attach input event listeners to trigger validation on input change
+    $("#business-info-form input").on("input", function () {
+      $("#business-info-form").validate().element($(this));
+    });
+
+    // Attach change event listeners to select elements to trigger validation on change
+    $("#business-info-form select").on("change", function () {
+      $("#business-info-form").validate().element($(this));
     });
   }
 
@@ -396,25 +594,6 @@ $(document).ready(function () {
 
     // Append image to the div with id "avatar"
     $("#pp").append(img);
-  }
-
-  /**
-   * Show/Hide Password
-   */
-  if ($(".inpt-pass")) {
-    $(".sh").click(function () {
-      var $input = $(this).prev("input");
-      var $form_group = $(this).closest(".form-group.inpt-pass");
-      if ($input.attr("type") === "password") {
-        $input.attr("type", "text");
-        $(this).text("Hide");
-        $form_group.addClass("show");
-      } else {
-        $input.attr("type", "password");
-        $(this).text("Show");
-        $form_group.removeClass("show");
-      }
-    });
   }
 
   /**
@@ -527,6 +706,66 @@ $(document).ready(function () {
    * Register Form Validation
    */
   if ($("#register_form").length > 0) {
+    // Function to validate input fields
+    function validateInput(element, validationFunction, errorMessage) {
+      var value = element.val().trim();
+      var isValid = validationFunction(value);
+      if (!isValid) {
+        addError(element, errorMessage);
+      } else {
+        removeError(element);
+      }
+      return isValid;
+    }
+
+    // Attach input event listeners to input fields for real-time validation
+    $("#register_form input").on("input", function () {
+      var fieldName = $(this).attr("id");
+      var fieldValue = $(this).val().trim();
+      var errorElement = $("#" + fieldName + "-error");
+      errorElement.text(""); // Clear error message
+
+      switch (fieldName) {
+        case "fname":
+          validateInput(
+            $(this),
+            function (value) {
+              return value !== "";
+            },
+            "Please enter your name."
+          );
+          break;
+        case "register-email":
+          validateInput(
+            $(this),
+            isValidEmail,
+            "Please enter a valid email address."
+          );
+          break;
+        case "phone-num":
+          validateInput(
+            $(this),
+            function (value) {
+              return value !== "";
+            },
+            "Please enter your phone number."
+          );
+          break;
+        case "password":
+          validateInput(
+            $(this),
+            function (value) {
+              return value.length > 0;
+            },
+            "Please enter a password."
+          );
+          break;
+        default:
+          break;
+      }
+    });
+
+    // Attach submit event handler to the form
     $("#register_form").submit(function (e) {
       e.preventDefault(); // Prevent default form submission
 
@@ -535,52 +774,52 @@ $(document).ready(function () {
       $(".form-control").removeClass("error-input");
 
       // Get form inputs
-      var fname = $("#fname").val().trim();
-      var email = $("#register-email").val().trim();
-      var phone = $("#phone-num").val().trim();
-      var occupation = $("#register-occupation").val().trim();
-      var password = $('input[name="password"]').val().trim();
+      var fname = $("#fname");
+      var email = $("#register-email");
+      var phone = $("#phone-num");
+      var occupation = $("#register-occupation");
+      var password = $("#password");
       var agreementChecked = $("#agreementCheck").is(":checked");
 
       var isValid = true;
 
       // Validate Name
-      if (fname === "") {
-        $("#fname").addClass("error-input");
-        $("#fname-error").text("Please enter your name.");
-        isValid = false;
-      }
+      isValid =
+        validateInput(
+          fname,
+          function (value) {
+            return value !== "";
+          },
+          "Please enter your name."
+        ) && isValid;
 
-      // Validate Occupation
-      if (occupation === "") {
-        $("#register-occupation").addClass("error-input");
-        $("#occupation-error").text("Please select your occupation.");
-        isValid = false;
-      }
+      // Validate Email
+      isValid =
+        validateInput(
+          email,
+          isValidEmail,
+          "Please enter a valid email address."
+        ) && isValid;
 
       // Validate Phone Number
-      if (phone === "") {
-        $("#phone-num").addClass("error-input");
-        $("#phone-error").text("Please enter your phone number.");
-        isValid = false;
-      }
+      isValid =
+        validateInput(
+          phone,
+          function (value) {
+            return value !== "";
+          },
+          "Please enter your phone number."
+        ) && isValid;
 
       // Validate Password
-      if (password.length === 0) {
-        addError($('input[name="password"]'), "Please enter a password.");
-        isValid = false;
-      }
-
-      // Validate Email Address
-      if (email === "") {
-        $("#register-email").addClass("error-input");
-        $("#email-error").text("Please enter your email address.");
-        isValid = false;
-      } else if (!isValidEmail(email)) {
-        $("#register-email").addClass("error-input");
-        $("#email-error").text("Please enter a valid email address.");
-        isValid = false;
-      }
+      isValid =
+        validateInput(
+          password,
+          function (value) {
+            return value.length > 0;
+          },
+          "Please enter a password."
+        ) && isValid;
 
       // Validate Agreement Checkbox
       if (!agreementChecked) {
