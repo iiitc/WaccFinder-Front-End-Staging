@@ -125,6 +125,7 @@ $(document).ready(function () {
     element.removeClass("error-input");
     element.next(".error-message").remove();
   }
+
   initializeShowHide();
 
   /**
@@ -198,27 +199,35 @@ $(document).ready(function () {
       // If all validations pass, submit the form
       if (isValid) {
         this.submit();
+      } else {
+        // If there are errors, reinitialize show/hide functionality
+        initializeShowHide();
       }
     });
+  }
 
-    // Attach click event handler to the Forgot Password button
-    $("#forgot").click(function (e) {
+  /**
+   * Forgot Password Page Script
+   */
+  if ($("#forgot-pass").length > 0) {
+    initializeShowHide();
+    $("form").submit(function (e) {
       e.preventDefault(); // Prevent default form submission
 
       // Clear any previous error states and messages
       $(".error-input").removeClass("error-input");
       $(".error-message").remove();
 
-      // Get input values
+      // Get form inputs
       var email = $('input[name="email"]').val().trim();
 
       var isValid = true;
 
       // Validate Email
-      if (email.length === 0) {
-        addError($('input[name="email"]'), "Please enter an email address.");
+      if (email === "") {
+        addError($('input[name="email"]'), "Please enter your email address.");
         isValid = false;
-      } else if (!validateEmail(email)) {
+      } else if (!isValidEmail(email)) {
         addError(
           $('input[name="email"]'),
           "Please enter a valid email address."
@@ -231,12 +240,51 @@ $(document).ready(function () {
         this.submit();
       }
     });
+
+    // Function to add error display
+    function addError(element, message) {
+      element.addClass("error-input");
+      var errorMessage = $('<div class="error-message">' + message + "</div>");
+      element.after(errorMessage);
+
+      // Add event listener to validate input on change
+      element.on("input", function () {
+        var inputValue = $(this).val().trim();
+        var fieldName = $(this).attr("name");
+        var errorElement = $(this).siblings(".error-message");
+        var errorMessage = "";
+
+        // Validate the input based on field name
+        switch (fieldName) {
+          case "email":
+            errorMessage =
+              inputValue === ""
+                ? "Please enter your email address."
+                : !isValidEmail(inputValue)
+                ? "Please enter a valid email address."
+                : "";
+            break;
+          default:
+            break;
+        }
+
+        // Update error message and error state
+        if (errorMessage) {
+          element.addClass("error-input");
+          errorElement.text(errorMessage);
+        } else {
+          element.removeClass("error-input");
+          errorElement.text("");
+        }
+      });
+    }
   }
 
   /**
    * Reset Password Page Script
    */
   if ($("#reset-pass").length > 0) {
+    initializeShowHide();
     $("form").submit(function (e) {
       e.preventDefault(); // Prevent default form submission
 
@@ -245,22 +293,12 @@ $(document).ready(function () {
       $(".error-message").remove();
 
       // Get form inputs
-      var currentPassword = $('input[name="current_password"]').val().trim();
       var newPassword = $('input[name="password"]').val().trim();
       var confirmPassword = $('input[name="password_confirmation"]')
         .val()
         .trim();
 
       var isValid = true;
-
-      // Validate Current Password
-      if (currentPassword.length === 0) {
-        addError(
-          $('input[name="current_password"]'),
-          "Please enter your current password."
-        );
-        isValid = false;
-      }
 
       // Validate New Password
       if (newPassword.length < 8) {
@@ -301,12 +339,6 @@ $(document).ready(function () {
 
         // Validate the input based on field name
         switch (fieldName) {
-          case "current_password":
-            errorMessage =
-              inputValue.length === 0
-                ? "Please enter your current password."
-                : "";
-            break;
           case "password":
             errorMessage =
               inputValue.length < 8
@@ -339,6 +371,8 @@ $(document).ready(function () {
    * Security Page Script
    */
   if ($("#security").length > 0) {
+    initializeShowHide();
+
     $("form").submit(function (e) {
       e.preventDefault(); // Prevent default form submission
 
@@ -385,6 +419,9 @@ $(document).ready(function () {
       // If all validations pass, submit the form
       if (isValid) {
         this.submit();
+      } else {
+        // If there are errors, reinitialize show/hide functionality
+        initializeShowHide();
       }
     });
 
