@@ -1628,4 +1628,54 @@ $(document).ready(function () {
 
     updateNavigationButtons();
   }
+
+  /**
+   * Stripe Checkout Form
+   */
+  if ($("#modalCheckout").length > 0) {
+    // Add validation rules
+    $("#payment-form").validate({
+      rules: {
+        "cc-name": {
+          required: true,
+        },
+        "cc-number": {
+          required: true,
+          minlength: 16,
+          maxlength: 16,
+          digits: true, // Only digits allowed
+        },
+        "cc-expiry": {
+          required: true,
+          date: true, // Validate as date
+        },
+        "cc-cvv": {
+          required: true,
+          minlength: 3,
+          maxlength: 3,
+          digits: true, // Only digits allowed
+        },
+      },
+      // Specify validation error messages
+      messages: {
+        "cc-name": "Please enter the name on card",
+        "cc-number": {
+          required: "Please enter credit card number",
+          minlength: "Credit card number must be 16 digits",
+          maxlength: "Credit card number must be 16 digits",
+          digits: "Please enter only digits",
+        },
+        "cc-expiry": {
+          required: "Please enter card expiry",
+          date: "Please enter a valid date (MM / YYYY)",
+        },
+        "cc-cvv": {
+          required: "Please enter CVV",
+          minlength: "CVV must be 3 digits",
+          maxlength: "CVV must be 3 digits",
+          digits: "Please enter only digits",
+        },
+      },
+    });
+  }
 });

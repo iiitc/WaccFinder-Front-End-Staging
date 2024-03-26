@@ -2493,6 +2493,60 @@ form {
 }
 
 /**
+* Stripe Form CSS
+*/
+#modalCheckout {
+  .logo {
+    img {
+      display: block;
+      width: 250px;
+      margin-inline: auto;
+    }
+  }
+  .credit-card-container {
+    width: 24rem; // Equivalent to w-96 in Tailwind
+    margin: auto;
+    border-radius: 0.5rem;
+
+    .credit-card-form {
+      width: 100%;
+      height: auto;
+      padding: 1rem;
+
+      .form-field {
+        margin-bottom: 1rem;
+        padding: 0.75rem;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        &:focus-within {
+          color: #333; // Equivalent to focus-within:text-gray-900 in Tailwind
+          border-color: #888; // Equivalent to focus-within:border-gray-500 in Tailwind
+        }
+
+        input {
+          width: 100%;
+          outline: none; // Equivalent to focus:outline-none in Tailwind
+        }
+      }
+
+      .form-field-split {
+        display: flex;
+
+        div {
+          width: 50%;
+          &:first-child {
+            margin-right: 0.5rem;
+          }
+          &:last-child {
+            margin-left: 0.5rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+/**
 * Main Footer Page CSS
 */
 #login-footer {
