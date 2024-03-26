@@ -2547,6 +2547,290 @@ form {
 }
 
 /**
+* Report Template CSS
+*/
+#report_template {
+  .rumus {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 9.063rem;
+    &__item {
+      position: relative;
+      &.has-child {
+        .circle {
+          position: relative;
+          &:after {
+            content: "";
+            width: 4px;
+            height: 100px;
+            background: #3a3a3d;
+            position: absolute;
+            top: 100%;
+            left: calc(50% - 1.5px);
+          }
+        }
+      }
+      &.multiplication {
+        position: relative;
+        &:after {
+          content: "x";
+          font-size: 36px;
+          line-height: 45 px;
+          position: absolute;
+          right: -60%;
+          top: calc(50% - 22.5px);
+          display: inline-block;
+          width: max-content;
+        }
+      }
+      &.addition {
+        position: relative;
+        &:after {
+          content: "+";
+          font-size: 36px;
+          line-height: 45 px;
+          position: absolute;
+          right: -60%;
+          top: calc(50% - 22.5px);
+          display: inline-block;
+          width: max-content;
+        }
+      }
+      &.equals {
+        position: relative;
+        &:after {
+          content: "=";
+          font-size: 36px;
+          line-height: 45 px;
+          position: absolute;
+          left: -60%;
+          top: calc(50% - 22.5px);
+          display: inline-block;
+          width: max-content;
+        }
+      }
+      &.grouped-start {
+        &:before {
+          content: "";
+          width: 33px;
+          height: 33px;
+          background-color: #3a3a3d;
+          position: absolute;
+          top: 114%;
+          left: 251%;
+          background: url(../images/half-circle-line.png);
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: contain;
+          z-index: 2;
+        }
+      }
+      &.grouped-end {
+        &:before {
+          content: "";
+          width: 4px;
+          height: 32px;
+          background: #3a3a3d;
+          position: absolute;
+          top: 100%;
+          left: calc(50% - 1.5px);
+        }
+        &:after {
+          content: "";
+          width: 500px;
+          height: 4px;
+          background: #3a3a3d;
+          position: absolute;
+          top: calc(100% + 30px);
+          right: calc(50% - 2px);
+        }
+      }
+      .circle {
+        width: 128px;
+        height: 128px;
+        border-radius: 50%;
+        background: #6b2d5c;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        .text {
+          color: #fff;
+        }
+        &.total {
+          background: #ee7a48;
+        }
+
+        .text {
+          small {
+            font-size: 14px;
+            line-height: 24px;
+            opacity: 0.5;
+          }
+        }
+        &-small {
+          width: 88px;
+          height: 88px;
+          border-radius: 50%;
+          background: #b74f6f;
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          & + .circle-small {
+            margin-left: 21px;
+          }
+          &.dashed {
+            background: #fff;
+            border: 1px dashed $input-border;
+            .text {
+              color: #000;
+            }
+          }
+          &.multiplication {
+            position: relative;
+            &:after {
+              content: "x";
+              font-size: 24px;
+              line-height: 30px;
+              position: absolute;
+              left: 104%;
+              top: calc(50% - 15px);
+              display: inline-block;
+              width: max-content;
+            }
+          }
+          &.addition {
+            position: relative;
+            &:after {
+              content: "+";
+              font-size: 24px;
+              line-height: 30px;
+              position: absolute;
+              left: 104%;
+              top: calc(50% - 15px);
+              display: inline-block;
+              width: max-content;
+            }
+          }
+          &.addition-parentheses-start {
+            position: relative;
+            margin-right: 10px;
+            &:after {
+              content: "+(";
+              font-size: 24px;
+              line-height: 30px;
+              position: absolute;
+              left: 102%;
+              top: calc(50% - 15px);
+              display: inline-block;
+              width: max-content;
+            }
+          }
+          &.addition-parentheses-end {
+            position: relative;
+            margin-right: 10px;
+            &:after {
+              content: ")+";
+              font-size: 24px;
+              line-height: 30px;
+              position: absolute;
+              left: 104%;
+              top: calc(50% - 15px);
+              display: inline-block;
+              width: max-content;
+            }
+          }
+          &.higlighted {
+            border: 4px solid #93c1ff;
+            &:after {
+              left: calc(102% + 4px);
+            }
+          }
+          .text {
+            font-size: 12px;
+            line-height: 16px;
+            color: #fff;
+          }
+          .value {
+            width: 2.5rem;
+            height: 2.5rem;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            -webkit-justify-content: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            -webkit-align-items: center;
+            -ms-flex-align: center;
+            align-items: center;
+            background: #a63255;
+            border-radius: 50px;
+            position: absolute;
+            top: -0.625rem;
+            right: -0.625rem;
+            span {
+              color: #fff;
+            }
+          }
+        }
+        .value {
+          width: 3.75rem;
+          height: 3.75rem;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-flex-direction: column;
+          -ms-flex-direction: column;
+          flex-direction: column;
+          -webkit-justify-content: center;
+          -ms-flex-pack: center;
+          justify-content: center;
+          -webkit-align-items: center;
+          -ms-flex-align: center;
+          align-items: center;
+          background: #f54b1a;
+          border-radius: 50px;
+          position: absolute;
+          top: -0.5rem;
+          right: -0.5rem;
+          span {
+            font-size: 10px;
+            line-height: 16px;
+            color: #fff;
+          }
+        }
+      }
+
+      .childs {
+        position: absolute;
+        top: calc(100% + 54px);
+        left: calc(50% + 30px);
+        display: flex;
+        justify-content: space-between;
+        &:before {
+          content: "";
+          width: 30px;
+          height: 30px;
+          position: absolute;
+          top: calc(50% - 15px);
+          right: 100%;
+          background: url(../images/Report\ Template/arrow-lines.svg);
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center;
+        }
+      }
+    }
+  }
+}
+
+/**
 * Main Footer Page CSS
 */
 #login-footer {
@@ -3042,6 +3326,24 @@ form {
   #select-plan {
     .col-md-4 {
       margin-bottom: 1.5rem;
+    }
+  }
+
+  #activation {
+    .activation {
+      .auth__stepper {
+        .step {
+          &:after {
+            content: "";
+            width: calc(100% - 3.625rem);
+            height: 1px;
+            background: #000;
+            position: absolute;
+            top: 1.9375rem;
+            left: calc(100% - 1.15rem);
+          }
+        }
+      }
     }
   }
 }

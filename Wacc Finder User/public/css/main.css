@@ -2334,6 +2334,278 @@ form .form-group .iti .iti__flag-container .iti__selected-flag {
 }
 
 /**
+* Report Template CSS
+*/
+#report_template .rumus {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 9.063rem;
+}
+#report_template .rumus__item {
+  position: relative;
+}
+#report_template .rumus__item.has-child .circle {
+  position: relative;
+}
+#report_template .rumus__item.has-child .circle:after {
+  content: "";
+  width: 4px;
+  height: 100px;
+  background: #3a3a3d;
+  position: absolute;
+  top: 100%;
+  left: calc(50% - 1.5px);
+}
+#report_template .rumus__item.multiplication {
+  position: relative;
+}
+#report_template .rumus__item.multiplication:after {
+  content: "x";
+  font-size: 36px;
+  line-height: 45 px;
+  position: absolute;
+  right: -60%;
+  top: calc(50% - 22.5px);
+  display: inline-block;
+  width: max-content;
+}
+#report_template .rumus__item.addition {
+  position: relative;
+}
+#report_template .rumus__item.addition:after {
+  content: "+";
+  font-size: 36px;
+  line-height: 45 px;
+  position: absolute;
+  right: -60%;
+  top: calc(50% - 22.5px);
+  display: inline-block;
+  width: max-content;
+}
+#report_template .rumus__item.equals {
+  position: relative;
+}
+#report_template .rumus__item.equals:after {
+  content: "=";
+  font-size: 36px;
+  line-height: 45 px;
+  position: absolute;
+  left: -60%;
+  top: calc(50% - 22.5px);
+  display: inline-block;
+  width: max-content;
+}
+#report_template .rumus__item.grouped-start:before {
+  content: "";
+  width: 33px;
+  height: 33px;
+  background-color: #3a3a3d;
+  position: absolute;
+  top: 114%;
+  left: 251%;
+  background: url(../images/half-circle-line.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  z-index: 2;
+}
+#report_template .rumus__item.grouped-end:before {
+  content: "";
+  width: 4px;
+  height: 32px;
+  background: #3a3a3d;
+  position: absolute;
+  top: 100%;
+  left: calc(50% - 1.5px);
+}
+#report_template .rumus__item.grouped-end:after {
+  content: "";
+  width: 500px;
+  height: 4px;
+  background: #3a3a3d;
+  position: absolute;
+  top: calc(100% + 30px);
+  right: calc(50% - 2px);
+}
+#report_template .rumus__item .circle {
+  width: 128px;
+  height: 128px;
+  border-radius: 50%;
+  background: #6b2d5c;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+#report_template .rumus__item .circle .text {
+  color: #fff;
+}
+#report_template .rumus__item .circle.total {
+  background: #ee7a48;
+}
+#report_template .rumus__item .circle .text small {
+  font-size: 14px;
+  line-height: 24px;
+  opacity: 0.5;
+}
+#report_template .rumus__item .circle-small {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  background: #b74f6f;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+#report_template .rumus__item .circle-small + .circle-small {
+  margin-left: 21px;
+}
+#report_template .rumus__item .circle-small.dashed {
+  background: #fff;
+  border: 1px dashed #9da2ab;
+}
+#report_template .rumus__item .circle-small.dashed .text {
+  color: #000;
+}
+#report_template .rumus__item .circle-small.multiplication {
+  position: relative;
+}
+#report_template .rumus__item .circle-small.multiplication:after {
+  content: "x";
+  font-size: 24px;
+  line-height: 30px;
+  position: absolute;
+  left: 104%;
+  top: calc(50% - 15px);
+  display: inline-block;
+  width: max-content;
+}
+#report_template .rumus__item .circle-small.addition {
+  position: relative;
+}
+#report_template .rumus__item .circle-small.addition:after {
+  content: "+";
+  font-size: 24px;
+  line-height: 30px;
+  position: absolute;
+  left: 104%;
+  top: calc(50% - 15px);
+  display: inline-block;
+  width: max-content;
+}
+#report_template .rumus__item .circle-small.addition-parentheses-start {
+  position: relative;
+  margin-right: 10px;
+}
+#report_template .rumus__item .circle-small.addition-parentheses-start:after {
+  content: "+(";
+  font-size: 24px;
+  line-height: 30px;
+  position: absolute;
+  left: 102%;
+  top: calc(50% - 15px);
+  display: inline-block;
+  width: max-content;
+}
+#report_template .rumus__item .circle-small.addition-parentheses-end {
+  position: relative;
+  margin-right: 10px;
+}
+#report_template .rumus__item .circle-small.addition-parentheses-end:after {
+  content: ")+";
+  font-size: 24px;
+  line-height: 30px;
+  position: absolute;
+  left: 104%;
+  top: calc(50% - 15px);
+  display: inline-block;
+  width: max-content;
+}
+#report_template .rumus__item .circle-small.higlighted {
+  border: 4px solid #93c1ff;
+}
+#report_template .rumus__item .circle-small.higlighted:after {
+  left: calc(102% + 4px);
+}
+#report_template .rumus__item .circle-small .text {
+  font-size: 12px;
+  line-height: 16px;
+  color: #fff;
+}
+#report_template .rumus__item .circle-small .value {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: #a63255;
+  border-radius: 50px;
+  position: absolute;
+  top: -0.625rem;
+  right: -0.625rem;
+}
+#report_template .rumus__item .circle-small .value span {
+  color: #fff;
+}
+#report_template .rumus__item .circle .value {
+  width: 3.75rem;
+  height: 3.75rem;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: #f54b1a;
+  border-radius: 50px;
+  position: absolute;
+  top: -0.5rem;
+  right: -0.5rem;
+}
+#report_template .rumus__item .circle .value span {
+  font-size: 10px;
+  line-height: 16px;
+  color: #fff;
+}
+#report_template .rumus__item .childs {
+  position: absolute;
+  top: calc(100% + 54px);
+  left: calc(50% + 30px);
+  display: flex;
+  justify-content: space-between;
+}
+#report_template .rumus__item .childs:before {
+  content: "";
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: calc(50% - 15px);
+  right: 100%;
+  background: url(../images/Report\ Template/arrow-lines.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/**
 * Main Footer Page CSS
 */
 #login-footer {
@@ -2736,6 +3008,15 @@ form .form-group .iti .iti__flag-container .iti__selected-flag {
   }
   #select-plan .col-md-4 {
     margin-bottom: 1.5rem;
+  }
+  #activation .activation .auth__stepper .step:after {
+    content: "";
+    width: calc(100% - 3.625rem);
+    height: 1px;
+    background: #000;
+    position: absolute;
+    top: 1.9375rem;
+    left: calc(100% - 1.15rem);
   }
 }
 
