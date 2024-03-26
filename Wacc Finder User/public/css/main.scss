@@ -2061,7 +2061,7 @@ form {
         height: 100px;
         padding: 10px;
         border-radius: 50%;
-        background: #6b2d5c;
+        background: $dark_cerulean;
         display: flex;
         flex-wrap: wrap;
         align-items: center;
@@ -2106,7 +2106,7 @@ form {
           display: inline-block;
         }
         .circle {
-          background-color: #b74f6f;
+          background-color: $oxford_blue;
         }
       }
       &.addition {
