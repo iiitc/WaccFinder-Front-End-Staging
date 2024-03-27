@@ -1888,7 +1888,7 @@ form .form-group .iti .iti__flag-container .iti__selected-flag {
   height: 100px;
   padding: 10px;
   border-radius: 50%;
-  background: #6b2d5c;
+  background: #02457a;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -1934,7 +1934,7 @@ form .form-group .iti .iti__flag-container .iti__selected-flag {
   display: inline-block;
 }
 #get-started .rumus__item.multiplication .circle {
-  background-color: #b74f6f;
+  background-color: #001b4b;
 }
 #get-started .rumus__item.addition {
   position: relative;
