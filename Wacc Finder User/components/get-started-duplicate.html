@@ -141,34 +141,6 @@
       <section id="get-started">
         <div class="container">
           <div class="row">
-            <div class="col-12">
-              <div class="calculation-step-info calculation-step-info-one current">
-                <div class="calculation-step-info-counter">
-                  <span>1 of 3</span>
-                </div>
-                <h4>Step 1 - Find your cost of equity or CAPM</h4>
-              </div>
-              <div class="calculation-step-info calculation-step-info-two">
-                <div class="calculation-step-info-counter">
-                  <span>2 of 3</span>
-                </div>
-                <h4>Step 2 - Find your cost of debt</h4>
-              </div>
-              <div class="calculation-step-info calculation-step-info-three">
-                <div class="calculation-step-info-counter">
-                  <span>3 of 3</span>
-                </div>
-                <h4>Step 3 - Find your capital structure</h4>
-              </div>
-              <div class="calculation-step-info calculation-step-info-final">
-                <div class="calculation-step-info-counter">
-                  <span>3 of 3</span>
-                </div>
-                <h4>Completed</h4>
-              </div>
-            </div>
-          </div>
-          <div class="row">
             <div class="col-lg-7">
               <section class="calculator__action premiumUser">
                 <div class="container">
@@ -298,7 +270,7 @@
                                   class="form-select"
                                 >
                                   <option value="">Select a duration</option>
-                                  <option value="5">1-5 years</option>
+                                  <option value="5" selected>1-5 years</option>
                                   <option value="10">5 years and above</option>
                                 </select>
                               </div>
@@ -337,7 +309,9 @@
                                       name="month"
                                     >
                                       <option value="">Select month</option>
-                                      <option value="January">January</option>
+                                      <option value="January" selected>
+                                        January
+                                      </option>
                                       <option value="February">February</option>
                                       <option value="March">March</option>
                                       <option value="May">May</option>
@@ -359,7 +333,9 @@
                                       name="year"
                                     >
                                       <option value="">Select year</option>
-                                      <option value="2022">2022</option>
+                                      <option value="2022" selected>
+                                        2022
+                                      </option>
                                       <option value="2021">2021</option>
                                       <option value="2020">2020</option>
                                     </select>
@@ -396,7 +372,9 @@
                                   title="Select country"
                                 >
                                   <option value="">Select your country</option>
-                                  <option value="4.2%">Australia</option>
+                                  <option value="4.2%" selected>
+                                    Australia
+                                  </option>
                                 </select>
                               </div>
                               <div class="form-notes">
@@ -462,7 +440,7 @@
                                   title="Select currency"
                                 >
                                   <option value="">Select a Currency</option>
-                                  <option value="2.7%">AUD</option>
+                                  <option value="2.7%" selected>AUD</option>
                                 </select>
                               </div>
                               <div class="form-notes">
@@ -555,7 +533,9 @@
                                 >
                                   <option value="">Select industry</option>
                                   <option value="1.2">Advertising</option>
-                                  <option value="1.2">Aerospace/Defense</option>
+                                  <option value="1.2" selected>
+                                    Aerospace/Defense
+                                  </option>
                                 </select>
                               </div>
                               <div class="form-notes">
@@ -615,7 +595,7 @@
                                   <option value="0%">
                                     Above USD 2,445.7mil
                                   </option>
-                                  <option value="0.7%">
+                                  <option value="0.7%" selected>
                                     USD 2,445.7mil to USD 13,177.8mil
                                   </option>
                                   <option value="1.4%">
@@ -681,6 +661,7 @@
                                   id="pre_tax"
                                   class="form-control"
                                   type="number"
+                                  value="1"
                                 />
                               </div>
                               <div class="form-notes">
@@ -732,6 +713,7 @@
                                   name="tax"
                                   id="tax"
                                   type="number"
+                                  value="30"
                                 />
                               </div>
                               <p class="text-danger"></p>
@@ -785,6 +767,7 @@
                                   name="percent_debt"
                                   id="percent_debt"
                                   type="number"
+                                  value="15"
                                 />
                               </div>
                               <div class="form-notes">
@@ -944,7 +927,7 @@
               </p>
               <div class="rumus mt-5">
                 <div class="rumus__item multiplication">
-                  <div class="circle cost_of_equity equity-color highlighted">
+                  <div class="circle cost_of_equity">
                     <div class="text">
                       <span>Cost of Equity</span>
                     </div>
@@ -952,7 +935,7 @@
                       <span class="span-cost_of_equity">0%</span>
                     </div>
                   </div>
-                  <div class="circle percentage_equity equity-color">
+                  <div class="circle percentage_equity">
                     <div class="text">
                       <span>% Equity</span>
                     </div>
@@ -963,7 +946,7 @@
                 </div>
                 <div class="addition">+</div>
                 <div class="rumus__item multiplication">
-                  <div class="circle cost_of_debt debt-color">
+                  <div class="circle cost_of_debt">
                     <div class="text">
                       <span>Cost of Debt</span>
                     </div>
@@ -971,7 +954,7 @@
                       <span class="span-cost_of_debt">0%</span>
                     </div>
                   </div>
-                  <div class="circle percentage_debt debt-color">
+                  <div class="circle percentage_debt">
                     <div class="text text-percentage_debt">
                       <span>% debt</span>
                     </div>

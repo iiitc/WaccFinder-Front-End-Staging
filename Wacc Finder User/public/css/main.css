@@ -16,6 +16,7 @@ body {
   background-color: #b5914f;
   color: #fff;
   border: 1px solid #b5914f;
+  font-weight: 500;
 }
 
 .btn-brown-gold:hover {
@@ -67,7 +68,7 @@ body {
 }
 
 .bg-wacc-pale-cerulean {
-  background-color: rgba(151, 202, 219, 0.6);
+  background-color: #97cadb;
 }
 
 .text-wacc-color {
@@ -115,10 +116,9 @@ body {
   color: #60606b;
 }
 
-.container {
+/* .container {
   max-width: 1170px;
-}
-
+} */
 h1,
 h2,
 h3,
@@ -126,6 +126,7 @@ h4,
 h5,
 h6 {
   font-weight: 600;
+  font-family: "Libre Baskerville", serif;
 }
 
 h2 {
@@ -353,6 +354,7 @@ form .form-group .iti .iti__flag-container .iti__selected-flag {
 .main {
   min-height: calc(100vh - 50px);
   padding-top: 11rem;
+  padding-bottom: 50px;
 }
 .main .section {
   padding: 0 0 2.5rem;
@@ -417,7 +419,7 @@ form .form-group .iti .iti__flag-container .iti__selected-flag {
 }
 #login .form-signin {
   width: 100%;
-  max-width: 400px;
+  max-width: 500px;
   padding: 7rem 1rem;
 }
 #login .form-signin h1,
@@ -909,7 +911,7 @@ form .form-group .iti .iti__flag-container .iti__selected-flag {
   margin-bottom: 3.25rem;
 }
 #account .profile-info .profile-detail .profile-name .full-name {
-  font-weight: 500;
+  font-weight: 600;
   margin-bottom: 0;
   font-size: 2rem;
   line-height: 1.333em;
@@ -1190,8 +1192,7 @@ form .form-group .iti .iti__flag-container .iti__selected-flag {
 }
 #wacc .wacc__card .wacc__card-top h5 {
   color: #121820;
-  font-weight: 500;
-  margin-bottom: 0;
+  margin-bottom: 1.2rem;
 }
 #wacc .wacc__card .wacc__card-top .percentage {
   color: #121820;
@@ -1477,9 +1478,11 @@ form .form-group .iti .iti__flag-container .iti__selected-flag {
   position: absolute;
   top: 0;
   left: 12px;
+  border: 3px solid #640000;
+  border-radius: 20px;
 }
 #select-plan .plan__header .section__heading h1 {
-  font-size: 1.75rem;
+  font-size: 2.75rem;
   line-height: 1.7em;
   -webkit-text-fill-color: inherit;
 }
@@ -1512,6 +1515,7 @@ form .form-group .iti .iti__flag-container .iti__selected-flag {
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  border-radius: 15px;
   box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
   min-height: 100%;
 }
@@ -1520,18 +1524,22 @@ form .form-group .iti .iti__flag-container .iti__selected-flag {
   border-radius: 0px 0px 6px 6px;
 }
 #select-plan .plan__packets .plan__card.higlight .plan__card-title {
-  border-radius: 0 0 15px 15px;
+  border-radius: 0;
 }
 #select-plan .plan__packets .plan__card.higlight .plan__card-title .popular-tag {
   position: absolute;
-  top: -40px;
-  left: -3px;
-  background-color: #b5914f;
-  width: calc(100% + 6px);
+  top: -50px;
+  left: -2px;
+  background-color: #640000;
+  width: calc(100% + 4px);
   min-height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 2rem;
+  font-weight: 600;
+  border-radius: 10px 10px 0 0;
+  font-family: "Libre Baskerville", serif;
 }
 #select-plan .plan__packets .plan__card .plan__card-title {
   padding: 1.2rem;
@@ -1550,7 +1558,7 @@ form .form-group .iti .iti__flag-container .iti__selected-flag {
   justify-content: center;
   flex-wrap: wrap;
   align-content: center;
-  border-radius: 15px;
+  border-radius: 15px 15px 0 0;
   position: relative;
   min-height: 180px;
 }
@@ -1619,9 +1627,6 @@ form .form-group .iti .iti__flag-container .iti__selected-flag {
 }
 #select-plan .plan__packets .plan__card .plan__card-body .plan__card-heading .transparent-text {
   color: transparent;
-}
-#select-plan .plan__packets .plan__card .plan__card-body .plan__card-list {
-  margin-top: 50px;
 }
 #select-plan .plan__packets .plan__card .plan__card-body .plan__card-list > ul {
   margin-bottom: 1.25rem;
@@ -1695,6 +1700,34 @@ form .form-group .iti .iti__flag-container .iti__selected-flag {
 /**
 * Get Started Page CSS
 */
+#get-started .calculation-step-info {
+  display: none;
+  align-items: center;
+  column-gap: 20px;
+  background-color: #121820;
+  padding: 20px;
+  margin-bottom: 30px;
+}
+#get-started .calculation-step-info.current {
+  display: flex;
+}
+#get-started .calculation-step-info .calculation-step-info-counter {
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 4px solid #9da2ab;
+}
+#get-started .calculation-step-info .calculation-step-info-counter span {
+  color: #fff;
+}
+#get-started .calculation-step-info h4 {
+  margin: 0;
+  color: #fff;
+  font-size: 20px;
+}
 #get-started .calctab {
   display: none;
 }
@@ -1729,8 +1762,9 @@ form .form-group .iti .iti__flag-container .iti__selected-flag {
   margin-bottom: 1.5rem;
 }
 #get-started .calculator__action .calculator__question .form-group label {
-  font-weight: 400;
+  font-weight: 600;
   margin-bottom: 0.25rem;
+  font-family: "libre baskerville";
 }
 #get-started .calculator__action .calculator__question .form-notes {
   margin-bottom: 1.5rem;
@@ -1738,7 +1772,7 @@ form .form-group .iti .iti__flag-container .iti__selected-flag {
 #get-started .calculator__action .calculator__question .form-notes p {
   font-size: 0.875rem;
   line-height: 1.428em;
-  color: #000;
+  color: #9da2ab;
 }
 #get-started .calculator__action .calculator__question .form-watch {
   margin-bottom: 1.25rem;
@@ -1888,7 +1922,7 @@ form .form-group .iti .iti__flag-container .iti__selected-flag {
   height: 100px;
   padding: 10px;
   border-radius: 50%;
-  background: #02457a;
+  background: #121820;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -1897,9 +1931,12 @@ form .form-group .iti .iti__flag-container .iti__selected-flag {
   color: #fff;
   position: relative;
 }
+#get-started .rumus__item .circle.highlighted {
+  border: 6px solid #b5914f;
+}
 #get-started .rumus__item .circle .value {
-  width: 2.75rem;
-  height: 2.75rem;
+  width: 2.5rem;
+  height: 2.5rem;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -1933,8 +1970,11 @@ form .form-group .iti .iti__flag-container .iti__selected-flag {
   transform: translate(-50%, -50%);
   display: inline-block;
 }
-#get-started .rumus__item.multiplication .circle {
+#get-started .rumus__item.multiplication .circle.equity-color {
   background-color: #001b4b;
+}
+#get-started .rumus__item.multiplication .circle.debt-color {
+  background-color: #02457a;
 }
 #get-started .rumus__item.addition {
   position: relative;
@@ -2001,7 +2041,7 @@ form .form-group .iti .iti__flag-container .iti__selected-flag {
   display: block;
   width: 4rem;
   height: 4rem;
-  margin: 0 auto 0.5rem;
+  margin: 0 1.8rem 0.5rem;
   padding: 1.25rem 0.6875rem;
   border: 1px solid #9da2ab;
   border-radius: 50px;
@@ -2011,6 +2051,9 @@ form .form-group .iti .iti__flag-container .iti__selected-flag {
   border-color: #b5914f;
   color: #fff;
 }
+#activation .activation .auth__stepper .step.activated .number {
+  box-shadow: 0 0 0 3px #640000;
+}
 #activation .activation .auth__stepper .step:after {
   content: "";
   width: calc(100% - 2.625rem);
@@ -2018,7 +2061,7 @@ form .form-group .iti .iti__flag-container .iti__selected-flag {
   background: #000;
   position: absolute;
   top: 1.9375rem;
-  left: calc(100% - 1.22rem);
+  left: calc(100% - 1.82rem);
 }
 #activation .activation .auth__stepper .col-lg-4:last-child .step::after {
   content: unset;
@@ -2079,7 +2122,7 @@ form .form-group .iti .iti__flag-container .iti__selected-flag {
 * Help Center Page CSS
 */
 #helpcenter {
-  margin-top: 50px;
+  margin-bottom: 50px;
 }
 #helpcenter .nav-pills .nav-link {
   text-align: left;
@@ -3008,6 +3051,10 @@ form .form-group .iti .iti__flag-container .iti__selected-flag {
   }
   #select-plan .col-md-4 {
     margin-bottom: 1.5rem;
+  }
+  #select-plan .plan__header .container .btn__back {
+    top: -10%;
+    left: 44%;
   }
   #activation .activation .auth__stepper .step:after {
     content: "";

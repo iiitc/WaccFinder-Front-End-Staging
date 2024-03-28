@@ -1296,6 +1296,12 @@ $(document).ready(function () {
           .show();
 
         $("#hidden_costOfEquity").val(costOfEquity);
+
+        $(".circle.cost_of_equity").removeClass("highlighted");
+        $(".circle.cost_of_debt").addClass("highlighted");
+
+        $(".calculation-step-info-one").removeClass("current");
+        $(".calculation-step-info-two").addClass("current");
       }
 
       // Calculation for #calc9
@@ -1318,6 +1324,13 @@ $(document).ready(function () {
           .parent()
           .show();
         $("#hidden_costOfDebt").val(costOfDebt);
+
+        $(".circle.cost_of_debt").removeClass("highlighted");
+        $(".circle.percentage_equity").addClass("highlighted");
+        $(".circle.percentage_debt").addClass("highlighted");
+
+        $(".calculation-step-info-two").removeClass("current");
+        $(".calculation-step-info-three").addClass("current");
       }
 
       // Setting values for #calc10
@@ -1367,6 +1380,12 @@ $(document).ready(function () {
           .parent()
           .show();
         $("#hidden_wacc").val(wacc);
+
+        $(".circle.percentage_equity").removeClass("highlighted");
+        $(".circle.percentage_debt").removeClass("highlighted");
+
+        $(".calculation-step-info-three").removeClass("current");
+        $(".calculation-step-info-final").addClass("current");
 
         //Final Values
         populateHiddenFields();
