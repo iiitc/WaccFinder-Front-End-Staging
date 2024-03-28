@@ -1482,6 +1482,33 @@ $(document).ready(function () {
       console.log("Captured Data: ", formData);
     }
 
+    // Function to move to the next form field upon pressing "Enter"
+    $("#frm_calc input, #frm_calc select").keypress(function (e) {
+      // Check if the key pressed is "Enter"
+      if (e.which == 13) {
+        console.log("Enter pressed");
+        if (validateCurrentTab()) {
+          // Find current and next tab panels
+          var $currentTabPanel = $(this).closest(".tab-pane");
+          var $nextTabPanel = $currentTabPanel.next(".tab-pane");
+
+          captureFormData();
+
+          if ($nextTabPanel.length) {
+            // Activate next tab
+            var nextTabId = $nextTabPanel.attr("id");
+            $('[href="#' + nextTabId + '"]').tab("show");
+            // Introduce a delay before updating calculations.
+            setTimeout(function () {
+              updateCalculations();
+            }, 100); // 100 milliseconds delay.
+          }
+          updateNavigationButtons();
+        }
+        return false; // Prevent form submission
+      }
+    });
+
     // Initialize the jQuery Validation Plugin on the form
     $("#frm_calc").validate({
       // Validation rules,
