@@ -1310,7 +1310,19 @@ form {
       margin-bottom: 1rem;
       position: relative;
       padding-right: 2.5rem;
-
+      .tag-wacc-rep {
+        padding: 5px 15px;
+        background: $brown-gold;
+        color: #fff;
+        border-radius: 100px;
+        display: block;
+        max-width: -webkit-max-content;
+        max-width: -moz-max-content;
+        max-width: max-content;
+        margin-bottom: 10px;
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+      }
       h5 {
         color: $blue-black;
         margin-bottom: 1.2rem;
@@ -1386,7 +1398,7 @@ form {
     .create-report-modal-trigger {
       display: block !important;
     }
-    #modalReportTable {
+    .reportTable {
       .report-title {
         margin-bottom: 2rem;
         h4 {
@@ -1868,6 +1880,46 @@ form {
 /**
 * Get Started Page CSS
 */
+@keyframes load1 {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(135deg);
+  }
+}
+@keyframes load2 {
+  0% {
+    z-index: 100;
+    transform: rotate(180deg);
+  }
+
+  100% {
+    z-index: 100;
+    transform: rotate(235deg);
+  }
+}
+@keyframes load3 {
+  0% {
+    z-index: 100;
+    transform: rotate(270deg);
+  }
+
+  100% {
+    z-index: 100;
+    transform: rotate(360deg);
+  }
+}
+@keyframes load4 {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(180deg);
+  }
+}
 #get-started {
   .calculation-step-info {
     display: none;
@@ -1876,6 +1928,91 @@ form {
     background-color: $blue-black;
     padding: 20px;
     margin-bottom: 30px;
+
+    .progress {
+      width: 70px;
+      height: 70px;
+      font-size: 16px;
+      color: #fff;
+      border-radius: 50%;
+      overflow: hidden;
+      position: relative;
+      background: $dark_cerulean;
+      text-align: center;
+      line-height: 24px;
+      .title {
+        position: absolute;
+        z-index: 100;
+        color: #fff;
+        width: 100%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      .overlay {
+        width: 50%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        background-color: $dark_cerulean;
+      }
+      .left {
+        width: 50%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border: 5px solid $brown-gold;
+        border-radius: 100px 0px 0px 100px;
+        border-right: 0;
+        transform-origin: right;
+        animation: load1 1s linear forwards;
+      }
+      .right {
+        width: 50%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border: 5px solid $brown-gold;
+        border-radius: 100px 0px 0px 100px;
+        border-right: 0;
+        transform-origin: right;
+        animation: load2 0.5s linear forwards 1s;
+      }
+    }
+
+    &.calculation-step-info-one {
+      .right {
+        display: none;
+      }
+    }
+    &.calculation-step-info-two {
+      .right {
+        display: block;
+      }
+    }
+    &.calculation-step-info-three {
+      .left {
+        animation: load4 1s linear forwards;
+      }
+      .right {
+        display: block;
+        animation: load3 0.5s linear forwards 1s;
+      }
+    }
+    &.calculation-step-info-final {
+      .left {
+        animation: load4 1s linear forwards;
+      }
+      .right {
+        display: block;
+        animation: load3 0.5s linear forwards 1s;
+      }
+    }
+
     &.current {
       display: flex;
     }
@@ -1886,7 +2023,21 @@ form {
       align-items: center;
       justify-content: center;
       border-radius: 50%;
-      border: 4px solid $cadet-grey;
+      border: 4px solid transparent;
+      background-color: transparent;
+      position: relative;
+      &::after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-top: 4px solid;
+        border-right: 4px solid;
+        border-color: $brown-gold;
+        border-radius: 50%;
+      }
       span {
         color: #fff;
       }
@@ -1895,6 +2046,7 @@ form {
       margin: 0;
       color: #fff;
       font-size: 20px;
+      width: calc(100% - 70px - 20px);
     }
   }
   .calctab {
@@ -3024,7 +3176,7 @@ form {
   }
   .card-number {
     background: #fafafa;
-    border: $input-border;
+    border: 1px solid $input-border;
     border-radius: 10px;
     padding: 0.5em 1em;
   }

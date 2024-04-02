@@ -1190,6 +1190,19 @@ form .form-group .iti .iti__flag-container .iti__selected-flag {
   position: relative;
   padding-right: 2.5rem;
 }
+#wacc .wacc__card .wacc__card-top .tag-wacc-rep {
+  padding: 5px 15px;
+  background: #b5914f;
+  color: #fff;
+  border-radius: 100px;
+  display: block;
+  max-width: -webkit-max-content;
+  max-width: -moz-max-content;
+  max-width: max-content;
+  margin-bottom: 10px;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
 #wacc .wacc__card .wacc__card-top h5 {
   color: #121820;
   margin-bottom: 1.2rem;
@@ -1261,40 +1274,40 @@ form .form-group .iti .iti__flag-container .iti__selected-flag {
 #wacc.premiumUser .create-report-modal-trigger {
   display: block !important;
 }
-#wacc.premiumUser #modalReportTable .report-title {
+#wacc.premiumUser .reportTable .report-title {
   margin-bottom: 2rem;
 }
-#wacc.premiumUser #modalReportTable .report-title h4 {
+#wacc.premiumUser .reportTable .report-title h4 {
   color: #121820;
 }
-#wacc.premiumUser #modalReportTable .report-title p {
+#wacc.premiumUser .reportTable .report-title p {
   font-size: 0.875rem;
   line-height: 1.25rem;
   color: #000;
 }
-#wacc.premiumUser #modalReportTable .report-title p sup {
+#wacc.premiumUser .reportTable .report-title p sup {
   top: -0.7em;
 }
-#wacc.premiumUser #modalReportTable .report-table {
+#wacc.premiumUser .reportTable .report-table {
   margin-bottom: 2rem;
 }
-#wacc.premiumUser #modalReportTable .report-table table {
+#wacc.premiumUser .reportTable .report-table table {
   text-align: left;
   font-size: 0.875rem;
   line-height: 1.25rem;
   width: 100%;
 }
-#wacc.premiumUser #modalReportTable .report-table table tr.subtitle {
+#wacc.premiumUser .reportTable .report-table table tr.subtitle {
   background: #b5914f;
   color: #fff;
 }
-#wacc.premiumUser #modalReportTable .report-table table th {
+#wacc.premiumUser .reportTable .report-table table th {
   background: #b5914f;
   color: #fff;
   width: 33.3333333333%;
   padding: 0.5rem 0.75rem;
 }
-#wacc.premiumUser #modalReportTable .report-table table td {
+#wacc.premiumUser .reportTable .report-table table td {
   border-bottom: 1px solid #9da2ab;
   padding: 0.5rem 0.75rem;
 }
@@ -1700,6 +1713,42 @@ form .form-group .iti .iti__flag-container .iti__selected-flag {
 /**
 * Get Started Page CSS
 */
+@keyframes load1 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(135deg);
+  }
+}
+@keyframes load2 {
+  0% {
+    z-index: 100;
+    transform: rotate(180deg);
+  }
+  100% {
+    z-index: 100;
+    transform: rotate(235deg);
+  }
+}
+@keyframes load3 {
+  0% {
+    z-index: 100;
+    transform: rotate(270deg);
+  }
+  100% {
+    z-index: 100;
+    transform: rotate(360deg);
+  }
+}
+@keyframes load4 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(180deg);
+  }
+}
 #get-started .calculation-step-info {
   display: none;
   align-items: center;
@@ -1707,6 +1756,80 @@ form .form-group .iti .iti__flag-container .iti__selected-flag {
   background-color: #121820;
   padding: 20px;
   margin-bottom: 30px;
+}
+#get-started .calculation-step-info .progress {
+  width: 70px;
+  height: 70px;
+  font-size: 16px;
+  color: #fff;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  background: #02457a;
+  text-align: center;
+  line-height: 24px;
+}
+#get-started .calculation-step-info .progress .title {
+  position: absolute;
+  z-index: 100;
+  color: #fff;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#get-started .calculation-step-info .progress .overlay {
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background-color: #02457a;
+}
+#get-started .calculation-step-info .progress .left {
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 5px solid #b5914f;
+  border-radius: 100px 0px 0px 100px;
+  border-right: 0;
+  transform-origin: right;
+  animation: load1 1s linear forwards;
+}
+#get-started .calculation-step-info .progress .right {
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 5px solid #b5914f;
+  border-radius: 100px 0px 0px 100px;
+  border-right: 0;
+  transform-origin: right;
+  animation: load2 0.5s linear forwards 1s;
+}
+#get-started .calculation-step-info.calculation-step-info-one .right {
+  display: none;
+}
+#get-started .calculation-step-info.calculation-step-info-two .right {
+  display: block;
+}
+#get-started .calculation-step-info.calculation-step-info-three .left {
+  animation: load4 1s linear forwards;
+}
+#get-started .calculation-step-info.calculation-step-info-three .right {
+  display: block;
+  animation: load3 0.5s linear forwards 1s;
+}
+#get-started .calculation-step-info.calculation-step-info-final .left {
+  animation: load4 1s linear forwards;
+}
+#get-started .calculation-step-info.calculation-step-info-final .right {
+  display: block;
+  animation: load3 0.5s linear forwards 1s;
 }
 #get-started .calculation-step-info.current {
   display: flex;
@@ -1718,7 +1841,21 @@ form .form-group .iti .iti__flag-container .iti__selected-flag {
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  border: 4px solid #9da2ab;
+  border: 4px solid transparent;
+  background-color: transparent;
+  position: relative;
+}
+#get-started .calculation-step-info .calculation-step-info-counter::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-top: 4px solid;
+  border-right: 4px solid;
+  border-color: #b5914f;
+  border-radius: 50%;
 }
 #get-started .calculation-step-info .calculation-step-info-counter span {
   color: #fff;
@@ -1727,6 +1864,7 @@ form .form-group .iti .iti__flag-container .iti__selected-flag {
   margin: 0;
   color: #fff;
   font-size: 20px;
+  width: calc(100% - 70px - 20px);
 }
 #get-started .calctab {
   display: none;
@@ -2791,7 +2929,7 @@ form .form-group .iti .iti__flag-container .iti__selected-flag {
 }
 #payment_layout .card-number {
   background: #fafafa;
-  border: #9da2ab;
+  border: 1px solid #9da2ab;
   border-radius: 10px;
   padding: 0.5em 1em;
 }
