@@ -137,9 +137,77 @@
       </div>
     </header>
 
-    <main class="main">
+    <main class="main" id="get-started-bg">
       <section id="get-started">
         <div class="container">
+          <!-- Step Code Start -->
+          <div class="row">
+            <div class="col-12">
+              <div
+                class="calculation-step-info calculation-step-info-one current"
+              >
+                <div class="progress">
+                  <span
+                    class="title timer"
+                    data-from="0"
+                    data-to="3"
+                    data-speed="1000"
+                    >1 of 3</span
+                  >
+                  <div class="overlay"></div>
+                  <div class="left"></div>
+                  <div class="right"></div>
+                </div>
+                <h4>Step 1 - Find your cost of equity or CAPM</h4>
+              </div>
+              <div class="calculation-step-info calculation-step-info-two">
+                <div class="progress">
+                  <span
+                    class="title timer"
+                    data-from="0"
+                    data-to="3"
+                    data-speed="1000"
+                    >2 of 3</span
+                  >
+                  <div class="overlay"></div>
+                  <div class="left"></div>
+                  <div class="right"></div>
+                </div>
+                <h4>Step 2 - Find your cost of debt</h4>
+              </div>
+              <div class="calculation-step-info calculation-step-info-three">
+                <div class="progress">
+                  <span
+                    class="title timer"
+                    data-from="0"
+                    data-to="3"
+                    data-speed="1000"
+                    >3 of 3</span
+                  >
+                  <div class="overlay"></div>
+                  <div class="left"></div>
+                  <div class="right"></div>
+                </div>
+                <h4>Step 3 - Find your capital structure</h4>
+              </div>
+              <div class="calculation-step-info calculation-step-info-final">
+                <div class="progress">
+                  <span
+                    class="title timer"
+                    data-from="0"
+                    data-to="3"
+                    data-speed="1000"
+                    >3 of 3</span
+                  >
+                  <div class="overlay"></div>
+                  <div class="left"></div>
+                  <div class="right"></div>
+                </div>
+                <h4>Completed</h4>
+              </div>
+            </div>
+          </div>
+          <!-- !Step Code End -->
           <div class="row">
             <div class="col-lg-7">
               <section class="calculator__action freeUser">
@@ -843,7 +911,7 @@
               </p>
               <div class="rumus mt-5">
                 <div class="rumus__item multiplication">
-                  <div class="circle cost_of_equity">
+                  <div class="circle cost_of_equity equity-color">
                     <div class="text">
                       <span>Cost of Equity</span>
                     </div>
@@ -851,7 +919,7 @@
                       <span class="span-cost_of_equity">0%</span>
                     </div>
                   </div>
-                  <div class="circle percentage_equity">
+                  <div class="circle percentage_equity equity-color">
                     <div class="text">
                       <span>% Equity</span>
                     </div>
@@ -862,7 +930,7 @@
                 </div>
                 <div class="addition">+</div>
                 <div class="rumus__item multiplication">
-                  <div class="circle cost_of_debt">
+                  <div class="circle cost_of_debt debt-color">
                     <div class="text">
                       <span>Cost of Debt</span>
                     </div>
@@ -870,7 +938,7 @@
                       <span class="span-cost_of_debt">0%</span>
                     </div>
                   </div>
-                  <div class="circle percentage_debt">
+                  <div class="circle percentage_debt debt-color">
                     <div class="text text-percentage_debt">
                       <span>% debt</span>
                     </div>

@@ -1310,7 +1310,19 @@ form {
       margin-bottom: 1rem;
       position: relative;
       padding-right: 2.5rem;
-
+      .tag-wacc-rep {
+        padding: 5px 15px;
+        background: $brown-gold;
+        color: #fff;
+        border-radius: 100px;
+        display: block;
+        max-width: -webkit-max-content;
+        max-width: -moz-max-content;
+        max-width: max-content;
+        margin-bottom: 10px;
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+      }
       h5 {
         color: $blue-black;
         margin-bottom: 1.2rem;
@@ -1386,7 +1398,7 @@ form {
     .create-report-modal-trigger {
       display: block !important;
     }
-    #modalReportTable {
+    .reportTable {
       .report-title {
         margin-bottom: 2rem;
         h4 {
@@ -1742,7 +1754,11 @@ form {
         justify-content: space-between;
         .plan__card-heading {
           text-align: center;
-          margin-bottom: 1.25rem;
+          .greatness {
+            text-align: left;
+            padding-left: 12px;
+            padding-bottom: 20px;
+          }
           h2 {
             font-size: 1.3125rem;
             line-height: 1.5em;
@@ -1761,7 +1777,6 @@ form {
             justify-content: center;
             column-gap: 10px;
             min-height: 100px;
-            margin-bottom: 30px;
             p {
               font-size: 22px;
               line-height: 1.5em;
@@ -1868,7 +1883,178 @@ form {
 /**
 * Get Started Page CSS
 */
+#get-started-bg {
+  background-color: $grey_221;
+}
+@keyframes load1 {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(135deg);
+  }
+}
+@keyframes load2 {
+  0% {
+    z-index: 100;
+    transform: rotate(180deg);
+  }
+
+  100% {
+    z-index: 100;
+    transform: rotate(235deg);
+  }
+}
+@keyframes load3 {
+  0% {
+    z-index: 100;
+    transform: rotate(270deg);
+  }
+
+  100% {
+    z-index: 100;
+    transform: rotate(360deg);
+  }
+}
+@keyframes load4 {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(180deg);
+  }
+}
 #get-started {
+  .calculation-step-info {
+    display: none;
+    align-items: center;
+    column-gap: 20px;
+    background-color: $blue-black;
+    padding: 20px;
+    margin-bottom: 30px;
+
+    .progress {
+      width: 70px;
+      height: 70px;
+      font-size: 16px;
+      color: #fff;
+      border-radius: 50%;
+      overflow: hidden;
+      position: relative;
+      background: $dark_cerulean;
+      text-align: center;
+      line-height: 24px;
+      .title {
+        position: absolute;
+        z-index: 100;
+        color: #fff;
+        width: 100%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      .overlay {
+        width: 50%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        background-color: $dark_cerulean;
+      }
+      .left {
+        width: 50%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border: 5px solid $brown-gold;
+        border-radius: 100px 0px 0px 100px;
+        border-right: 0;
+        transform-origin: right;
+        animation: load1 1s linear forwards;
+      }
+      .right {
+        width: 50%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border: 5px solid $brown-gold;
+        border-radius: 100px 0px 0px 100px;
+        border-right: 0;
+        transform-origin: right;
+        animation: load2 0.5s linear forwards 1s;
+      }
+    }
+
+    &.calculation-step-info-one {
+      .right {
+        display: none;
+      }
+    }
+    &.calculation-step-info-two {
+      .right {
+        display: block;
+      }
+    }
+    &.calculation-step-info-three {
+      .left {
+        animation: load4 1s linear forwards;
+      }
+      .right {
+        display: block;
+        animation: load3 0.5s linear forwards 1s;
+      }
+    }
+    &.calculation-step-info-final {
+      .left {
+        animation: load4 1s linear forwards;
+      }
+      .right {
+        display: block;
+        animation: load3 0.5s linear forwards 1s;
+      }
+    }
+
+    &.current {
+      display: flex;
+    }
+    .calculation-step-info-counter {
+      width: 70px;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      border: 4px solid transparent;
+      background-color: transparent;
+      position: relative;
+      &::after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-top: 4px solid;
+        border-right: 4px solid;
+        border-color: $brown-gold;
+        border-radius: 50%;
+      }
+      span {
+        color: #fff;
+      }
+    }
+    h4 {
+      margin: 0;
+      color: #fff;
+      font-size: 20px;
+      width: calc(100% - 70px - 20px);
+    }
+  }
   .calctab {
     display: none;
   }
@@ -2062,20 +2248,22 @@ form {
       position: relative;
       display: flex;
       flex-direction: column;
-      row-gap: 2.5rem;
+      row-gap: 4.5rem;
       .circle {
         width: 100px;
         height: 100px;
         padding: 10px;
         border-radius: 50%;
-        background: $blue-black;
+        background: $brown-gold;
         display: flex;
         flex-wrap: wrap;
         align-items: center;
         justify-content: center;
         text-align: center;
-        color: #fff;
+        color: #000;
         position: relative;
+        font-weight: 500;
+        box-shadow: 5px 8px 6px hsla(0, 0%, 0%, 0.3);
         .value {
           width: 2.5rem;
           height: 2.5rem;
@@ -2111,12 +2299,15 @@ form {
           top: 50%;
           transform: translate(-50%, -50%);
           display: inline-block;
+          box-shadow: inset 0px 0px 5px #9da2ab;
+          border-radius: 50%;
+          padding: 0 18%;
         }
         .circle.equity-color {
-          background-color: $oxford_blue;
+          background-color: #fff;
         }
         .circle.debt-color {
-          background-color: $dark_cerulean;
+          background-color: #fff;
         }
       }
       &.addition {
@@ -2149,6 +2340,9 @@ form {
     .addition,
     .equals {
       font-size: 36px;
+      box-shadow: inset 0px 0px 5px #9da2ab;
+      border-radius: 50%;
+      padding: 0 3%;
     }
   }
 }
@@ -2296,6 +2490,7 @@ form {
       text-align: left;
       color: $blue-black;
       font-weight: 600;
+      font-size: 1.3rem;
       &.active {
         background-color: $brown-gold;
         color: #fff;
@@ -2313,6 +2508,7 @@ form {
       color: $text-color;
       padding-top: 0;
       padding-bottom: 0;
+      font-size: 1.3rem;
       &:not(.collapsed) {
         color: var(--bs-accordion-active-color);
         background-color: #fff;
@@ -2846,6 +3042,374 @@ form {
 }
 
 /**
+* Payment Pages CSS
+*/
+#payment_layout {
+  .logo {
+    width: 200px;
+  }
+  .flex {
+    display: flex;
+  }
+  .flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .flex-fill {
+    display: flex;
+    flex: 1 1;
+  }
+  .flex-vertical {
+    display: flex;
+    flex-direction: column;
+  }
+  .flex-vertical-center {
+    display: flex;
+    align-items: center;
+  }
+  .flex-between {
+    display: flex;
+    justify-content: space-between;
+  }
+  .p-sm {
+    padding: 0.5em;
+  }
+  .pl-sm {
+    padding-left: 0.5em;
+  }
+  .pr-sm {
+    padding-right: 0.5em;
+  }
+  .pb-sm {
+    padding-bottom: 0.5em;
+  }
+  .p-md {
+    padding: 1em;
+  }
+  .pb-md {
+    padding-bottom: 1em;
+  }
+  .p-lg {
+    padding: 2em;
+  }
+  .m-md {
+    margin: 1em;
+  }
+  .size-md {
+    font-size: 1em;
+  }
+  .size-lg {
+    font-size: 1.5em;
+  }
+  .size-xl {
+    font-size: 2em;
+  }
+  .half-width {
+    width: 50%;
+  }
+  .pointer {
+    cursor: pointer;
+  }
+  .uppercase {
+    text-transform: uppercase;
+  }
+  .ellipsis {
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+  .f-main-color {
+    color: $blue-black;
+  }
+  .f-secondary-color {
+    color: #fff;
+  }
+  .b-main-color {
+    background: $blue-black;
+  }
+  .numbers {
+    &::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  }
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  .bod-3 {
+    border-radius: 30px;
+  }
+  .main-back {
+    background: $azure-white !important;
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    top: 0px;
+    left: 0px;
+  }
+  .header {
+    padding-bottom: 1em;
+    .title {
+      font-size: 1.2em;
+      span {
+        font-weight: 300;
+      }
+    }
+  }
+  .card-data {
+    > div {
+      padding-bottom: 1.5em;
+      &:first-child {
+        padding-top: 1.5em;
+      }
+    }
+  }
+  .card-property-title {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1;
+    margin-right: 0.5em;
+    strong {
+      padding-bottom: 0.5em;
+      font-size: 1em;
+    }
+    span {
+      color: $blue-black;
+      font-size: 0.85em;
+    }
+  }
+  .card-property-value {
+    flex: 1 1;
+  }
+  .card-number {
+    background: #fafafa;
+    border: 1px solid $input-border;
+    border-radius: 10px;
+    padding: 0.5em 1em;
+  }
+  .card-number-field {
+    * {
+      line-height: 1;
+      margin: 0;
+      padding: 0;
+    }
+    input {
+      width: 100%;
+      height: 100%;
+      padding: 0.5em 1rem;
+      margin: 0 0.75em;
+      border: none;
+      color: $blue-black;
+      background: transparent;
+      font-weight: 500;
+    }
+  }
+  .timer {
+    span {
+      background: #311b92;
+      color: $text-color-light;
+      width: 1.2em;
+      padding: 4px 0;
+      display: inline-block;
+      text-align: center;
+      border-radius: 3px;
+      + {
+        span {
+          margin-left: 2px;
+        }
+      }
+    }
+    em {
+      font-style: normal;
+    }
+  }
+  .action {
+    button {
+      padding: 1.1em;
+      width: 100%;
+      height: 100%;
+      font-weight: 600;
+      font-size: 1em;
+      color: #fff;
+      border: none;
+      border-radius: 0.5em;
+      transition: background-color 0.2s ease-in-out;
+      &:hover {
+        background: $brown-gold;
+      }
+    }
+  }
+  .input-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 3em;
+    overflow: hidden;
+    border: 1px solid $input-border;
+    border-radius: 10px;
+    input {
+      line-height: 1;
+      flex: 1 1;
+      height: 100%;
+      width: 100%;
+      text-align: center;
+      border: none;
+      border-radius: 10px;
+      font-weight: 800;
+      font-size: 0.85em;
+      &:focus {
+        background: #e3f2fd;
+        color: $brown-gold;
+      }
+      &::placeholder {
+        color: $text-color-light;
+      }
+      &::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+      &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+    }
+    i {
+      line-height: 1;
+      position: absolute;
+      right: 0.5em;
+    }
+  }
+  .purchase-section {
+    position: relative;
+    overflow: visible;
+    padding: 0 1em 1em 1em;
+    background: $blue-black;
+    border-top-left-radius: 0.8em;
+    border-top-right-radius: 0.8em;
+    &:before {
+      content: "";
+      position: absolute;
+      width: 1.6em;
+      height: 1.6em;
+      border-radius: 50%;
+      left: -0.8em;
+      bottom: -0.8em;
+      background: #ffffff;
+    }
+    &:after {
+      content: "";
+      position: absolute;
+      width: 1.6em;
+      height: 1.6em;
+      border-radius: 50%;
+      right: -0.8em;
+      bottom: -0.8em;
+      background: #ffffff;
+    }
+  }
+  .card-mockup {
+    position: relative;
+    margin: 3em 1em 1.5em 1em;
+    padding: 1.5em 1.2em;
+    border-radius: 0.6em;
+    background: $dark_cerulean;
+    color: #fff;
+    box-shadow: 0 0.5em 1em 0.125em rgba(0, 0, 0, 0.1);
+    &:after {
+      content: "";
+      position: absolute;
+      width: 25%;
+      top: -0.2em;
+      left: 37.5%;
+      height: 0.2em;
+      background: $brown-gold;
+      border-top-left-radius: 0.2em;
+      border-top-right-radius: 0.2em;
+    }
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      width: 25%;
+      left: 37.5%;
+      height: 0.5em;
+      background: rgba(181, 145, 79, 0.21);
+      border-bottom-left-radius: 0.2em;
+      border-bottom-right-radius: 0.2em;
+      box-shadow: 0 2px 15px 5px rgba(181, 145, 79, 0.3);
+    }
+  }
+  .purchase-props {
+    margin: 0;
+    padding: 0;
+    font-size: 0.8em;
+    width: 100%;
+    li {
+      width: 100%;
+      line-height: 2.5;
+      span {
+        color: #fff;
+        font-weight: 600;
+      }
+      strong {
+        color: #fff;
+      }
+    }
+  }
+  .separation-line {
+    border-top: 1px dashed #aaa;
+    margin: 0 0.8em;
+  }
+  .total-section {
+    position: relative;
+    overflow: hidden;
+    padding: 1em;
+    background: $blue-black;
+    color: #fff;
+    border-bottom-left-radius: 0.8em;
+    border-bottom-right-radius: 0.8em;
+    &:before {
+      content: "";
+      position: absolute;
+      width: 1.6em;
+      height: 1.6em;
+      border-radius: 50%;
+      left: -0.8em;
+      top: -0.8em;
+      background: #ffffff;
+    }
+    &:after {
+      content: "";
+      position: absolute;
+      width: 1.6em;
+      height: 1.6em;
+      border-radius: 50%;
+      right: -0.8em;
+      top: -0.8em;
+      background: #ffffff;
+    }
+    strong {
+      font-size: 1.5em;
+      font-weight: 800;
+    }
+    small {
+      font-weight: 600;
+    }
+  }
+  .total-label {
+    font-size: 0.8em;
+    padding-bottom: 0.5em;
+    color: #fff;
+  }
+}
+
+/**
 * Main Footer Page CSS
 */
 #login-footer {
@@ -3351,6 +3915,11 @@ form {
           left: 44%;
         }
       }
+    }
+  }
+  #helpcenter {
+    .tab-content {
+      margin-top: 50px;
     }
   }
   #activation {

@@ -1606,7 +1606,11 @@ form .form-group .iti .iti__flag-container .iti__selected-flag {
 }
 #select-plan .plan__packets .plan__card .plan__card-body .plan__card-heading {
   text-align: center;
-  margin-bottom: 1.25rem;
+}
+#select-plan .plan__packets .plan__card .plan__card-body .plan__card-heading .greatness {
+  text-align: left;
+  padding-left: 12px;
+  padding-bottom: 20px;
 }
 #select-plan .plan__packets .plan__card .plan__card-body .plan__card-heading h2 {
   font-size: 1.3125rem;
@@ -1626,7 +1630,6 @@ form .form-group .iti .iti__flag-container .iti__selected-flag {
   justify-content: center;
   column-gap: 10px;
   min-height: 100px;
-  margin-bottom: 30px;
 }
 #select-plan .plan__packets .plan__card .plan__card-body .plan__card-heading .price p {
   font-size: 22px;
@@ -1713,6 +1716,10 @@ form .form-group .iti .iti__flag-container .iti__selected-flag {
 /**
 * Get Started Page CSS
 */
+#get-started-bg {
+  background-color: #dddddd;
+}
+
 @keyframes load1 {
   0% {
     transform: rotate(0deg);
@@ -1749,11 +1756,15 @@ form .form-group .iti .iti__flag-container .iti__selected-flag {
     transform: rotate(180deg);
   }
 }
+#get-started {
+  /* Calculation Step CSS Start */
+  /* !Calculation Step CSS Start */
+}
 #get-started .calculation-step-info {
   display: none;
   align-items: center;
   column-gap: 20px;
-  background-color: #121820;
+  background-color: #9da2ab;
   padding: 20px;
   margin-bottom: 30px;
 }
@@ -1765,14 +1776,15 @@ form .form-group .iti .iti__flag-container .iti__selected-flag {
   border-radius: 50%;
   overflow: hidden;
   position: relative;
-  background: #02457a;
+  background: #fff;
   text-align: center;
   line-height: 24px;
+  box-shadow: 5px 8px 6px hsla(0, 0%, 0%, 0.3);
 }
 #get-started .calculation-step-info .progress .title {
   position: absolute;
   z-index: 100;
-  color: #fff;
+  color: #000;
   width: 100%;
   top: 50%;
   left: 50%;
@@ -1785,7 +1797,7 @@ form .form-group .iti .iti__flag-container .iti__selected-flag {
   top: 0;
   left: 0;
   z-index: 1;
-  background-color: #02457a;
+  background-color: #fff;
 }
 #get-started .calculation-step-info .progress .left {
   width: 50%;
@@ -2053,24 +2065,23 @@ form .form-group .iti .iti__flag-container .iti__selected-flag {
   position: relative;
   display: flex;
   flex-direction: column;
-  row-gap: 2.5rem;
+  row-gap: 4.5rem;
 }
 #get-started .rumus__item .circle {
   width: 100px;
   height: 100px;
   padding: 10px;
   border-radius: 50%;
-  background: #121820;
+  background: #b5914f;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   text-align: center;
-  color: #fff;
+  color: #000;
   position: relative;
-}
-#get-started .rumus__item .circle.highlighted {
-  border: 6px solid #b5914f;
+  font-weight: 500;
+  box-shadow: 5px 8px 6px hsla(0, 0%, 0%, 0.3);
 }
 #get-started .rumus__item .circle .value {
   width: 2.5rem;
@@ -2107,12 +2118,15 @@ form .form-group .iti .iti__flag-container .iti__selected-flag {
   top: 50%;
   transform: translate(-50%, -50%);
   display: inline-block;
+  box-shadow: inset 0px 0px 5px #9da2ab;
+  border-radius: 50%;
+  padding: 0 18%;
 }
 #get-started .rumus__item.multiplication .circle.equity-color {
-  background-color: #001b4b;
+  background-color: #fff;
 }
 #get-started .rumus__item.multiplication .circle.debt-color {
-  background-color: #02457a;
+  background-color: #fff;
 }
 #get-started .rumus__item.addition {
   position: relative;
@@ -2143,6 +2157,9 @@ form .form-group .iti .iti__flag-container .iti__selected-flag {
 #get-started .rumus .addition,
 #get-started .rumus .equals {
   font-size: 36px;
+  box-shadow: inset 0px 0px 5px #9da2ab;
+  border-radius: 50%;
+  padding: 0 3%;
 }
 
 /**
@@ -2266,6 +2283,7 @@ form .form-group .iti .iti__flag-container .iti__selected-flag {
   text-align: left;
   color: #121820;
   font-weight: 600;
+  font-size: 1.3rem;
 }
 #helpcenter .nav-pills .nav-link.active {
   background-color: #b5914f;
@@ -2283,6 +2301,7 @@ form .form-group .iti .iti__flag-container .iti__selected-flag {
   color: #000;
   padding-top: 0;
   padding-bottom: 0;
+  font-size: 1.3rem;
 }
 #helpcenter .accordion-item .accordion-button:not(.collapsed) {
   color: var(--bs-accordion-active-color);
@@ -3547,6 +3566,9 @@ form .form-group .iti .iti__flag-container .iti__selected-flag {
   #select-plan .plan__header .container .btn__back {
     top: -10%;
     left: 44%;
+  }
+  #helpcenter .tab-content {
+    margin-top: 50px;
   }
   #activation .activation .auth__stepper .step:after {
     content: "";

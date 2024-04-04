@@ -1754,7 +1754,11 @@ form {
         justify-content: space-between;
         .plan__card-heading {
           text-align: center;
-          margin-bottom: 1.25rem;
+          .greatness {
+            text-align: left;
+            padding-left: 12px;
+            padding-bottom: 20px;
+          }
           h2 {
             font-size: 1.3125rem;
             line-height: 1.5em;
@@ -1773,7 +1777,6 @@ form {
             justify-content: center;
             column-gap: 10px;
             min-height: 100px;
-            margin-bottom: 30px;
             p {
               font-size: 22px;
               line-height: 1.5em;
@@ -1880,6 +1883,9 @@ form {
 /**
 * Get Started Page CSS
 */
+#get-started-bg {
+  background-color: $grey_221;
+}
 @keyframes load1 {
   0% {
     transform: rotate(0deg);
@@ -1921,11 +1927,12 @@ form {
   }
 }
 #get-started {
+  /* Calculation Step CSS Start */
   .calculation-step-info {
     display: none;
     align-items: center;
     column-gap: 20px;
-    background-color: $blue-black;
+    background-color: $cadet-grey;
     padding: 20px;
     margin-bottom: 30px;
 
@@ -1937,13 +1944,14 @@ form {
       border-radius: 50%;
       overflow: hidden;
       position: relative;
-      background: $dark_cerulean;
+      background: #fff;
       text-align: center;
       line-height: 24px;
+      box-shadow: 5px 8px 6px hsla(0, 0%, 0%, 0.3);
       .title {
         position: absolute;
         z-index: 100;
-        color: #fff;
+        color: #000;
         width: 100%;
         top: 50%;
         left: 50%;
@@ -1956,7 +1964,7 @@ form {
         top: 0;
         left: 0;
         z-index: 1;
-        background-color: $dark_cerulean;
+        background-color: #fff;
       }
       .left {
         width: 50%;
@@ -2049,6 +2057,7 @@ form {
       width: calc(100% - 70px - 20px);
     }
   }
+  /* !Calculation Step CSS Start */
   .calctab {
     display: none;
   }
@@ -2242,23 +2251,22 @@ form {
       position: relative;
       display: flex;
       flex-direction: column;
-      row-gap: 2.5rem;
+      row-gap: 4.5rem;
       .circle {
         width: 100px;
         height: 100px;
         padding: 10px;
         border-radius: 50%;
-        background: $blue-black;
+        background: $brown-gold;
         display: flex;
         flex-wrap: wrap;
         align-items: center;
         justify-content: center;
         text-align: center;
-        color: #fff;
+        color: #000;
         position: relative;
-        &.highlighted {
-          border: 6px solid $brown-gold;
-        }
+        font-weight: 500;
+        box-shadow: 5px 8px 6px hsla(0, 0%, 0%, 0.3);
         .value {
           width: 2.5rem;
           height: 2.5rem;
@@ -2294,12 +2302,15 @@ form {
           top: 50%;
           transform: translate(-50%, -50%);
           display: inline-block;
+          box-shadow: inset 0px 0px 5px #9da2ab;
+          border-radius: 50%;
+          padding: 0 18%;
         }
         .circle.equity-color {
-          background-color: $oxford_blue;
+          background-color: #fff;
         }
         .circle.debt-color {
-          background-color: $dark_cerulean;
+          background-color: #fff;
         }
       }
       &.addition {
@@ -2332,6 +2343,9 @@ form {
     .addition,
     .equals {
       font-size: 36px;
+      box-shadow: inset 0px 0px 5px #9da2ab;
+      border-radius: 50%;
+      padding: 0 3%;
     }
   }
 }
@@ -2479,6 +2493,7 @@ form {
       text-align: left;
       color: $blue-black;
       font-weight: 600;
+      font-size: 1.3rem;
       &.active {
         background-color: $brown-gold;
         color: #fff;
@@ -2496,6 +2511,7 @@ form {
       color: $text-color;
       padding-top: 0;
       padding-bottom: 0;
+      font-size: 1.3rem;
       &:not(.collapsed) {
         color: var(--bs-accordion-active-color);
         background-color: #fff;
@@ -3902,6 +3918,11 @@ form {
           left: 44%;
         }
       }
+    }
+  }
+  #helpcenter {
+    .tab-content {
+      margin-top: 50px;
     }
   }
   #activation {
