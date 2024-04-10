@@ -366,6 +366,12 @@ form .form-group .iti .iti__flag-container .iti__selected-flag {
   visibility: visible;
   top: -30px;
 }
+#main_header .navbar .navbar-nav .nav-item .nav-link .nav-icon {
+  width: 20px;
+}
+#main_header .navbar .navbar-nav .nav-item .nav-link .nav-icon.account-icon {
+  width: 30px;
+}
 #main_header .navbar .navbar-nav .nav-item .nav-link .link {
   display: flex;
   justify-content: center;
@@ -383,12 +389,6 @@ form .form-group .iti .iti__flag-container .iti__selected-flag {
 #main_header .navbar .navbar-nav .nav-item .nav-link span {
   color: #fff;
   margin-left: 10px;
-}
-#main_header .nav-icon {
-  width: 20px;
-}
-#main_header .nav-icon.account-icon {
-  width: 30px;
 }
 
 /**

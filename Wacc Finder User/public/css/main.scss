@@ -399,6 +399,7 @@ form {
       }
     }
     .navbar-nav {
+      // Icons and tooltips updated
       .nav-item {
         position: relative;
         .tooltip {
@@ -424,6 +425,12 @@ form {
           }
         }
         .nav-link {
+          .nav-icon {
+            width: 20px;
+            &.account-icon {
+              width: 30px;
+            }
+          }
           .link {
             display: flex;
             justify-content: center;
@@ -444,12 +451,7 @@ form {
           }
         }
       }
-    }
-  }
-  .nav-icon {
-    width: 20px;
-    &.account-icon {
-      width: 30px;
+      // Icons and tooltips updated!
     }
   }
 }
