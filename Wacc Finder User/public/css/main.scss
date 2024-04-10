@@ -400,13 +400,56 @@ form {
     }
     .navbar-nav {
       .nav-item {
+        position: relative;
+        .tooltip {
+          position: absolute;
+          top: -30px;
+          left: 50%;
+          transform: translateX(-50%);
+          background-color: #000;
+          color: #fff;
+          padding: 6px 10px;
+          border-radius: 5px;
+          opacity: 0;
+          visibility: hidden;
+          font-size: 14px;
+          min-width: max-content;
+          transition: all 0.3s ease;
+        }
+        &:hover {
+          .tooltip {
+            opacity: 1;
+            visibility: visible;
+            top: -30px;
+          }
+        }
         .nav-link {
+          .link {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            color: #4d4d4d;
+            background-color: #fff;
+            transition: all 0.3s ease-in-out;
+            &:hover {
+              box-shadow: 3px 2px 45px 0px rgb(0 0 0 / 12%);
+            }
+          }
           span {
             color: #fff;
             margin-left: 10px;
           }
         }
       }
+    }
+  }
+  .nav-icon {
+    width: 20px;
+    &.account-icon {
+      width: 30px;
     }
   }
 }
@@ -596,13 +639,13 @@ form {
           line-height: 0;
           width: 1.5rem;
           line-height: 1.5rem;
-          background: url(../images/login/ic-show-pw.svg) no-repeat center;
+          background: url(../images/login/ic-hide-pw.svg) no-repeat center;
           background-size: contain;
           cursor: pointer;
         }
         &.show {
           .sh {
-            background: url(../images/login/ic-hide-pw.svg) no-repeat center;
+            background: url(../images/login/ic-show-pw.svg) no-repeat center;
           }
         }
       }
@@ -938,13 +981,13 @@ form {
             line-height: 0;
             width: 1.5rem;
             line-height: 1.5rem;
-            background: url(../images/login/ic-show-pw.svg) no-repeat center;
+            background: url(../images/login/ic-hide-pw.svg) no-repeat center;
             background-size: contain;
             cursor: pointer;
           }
           &.show {
             .sh {
-              background: url(../images/login/ic-hide-pw.svg) no-repeat center;
+              background: url(../images/login/ic-show-pw.svg) no-repeat center;
             }
           }
         }
@@ -1484,13 +1527,13 @@ form {
           line-height: 0;
           width: 1.5rem;
           line-height: 1.5rem;
-          background: url(../images/login/ic-show-pw.svg) no-repeat center;
+          background: url(../images/login/ic-hide-pw.svg) no-repeat center;
           background-size: contain;
           cursor: pointer;
         }
         &.show {
           .sh {
-            background: url(../images/login/ic-hide-pw.svg) no-repeat center;
+            background: url(../images/login/ic-show-pw.svg) no-repeat center;
           }
         }
       }

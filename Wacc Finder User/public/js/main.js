@@ -133,9 +133,9 @@ $(document).ready(function () {
    */
   if ($("#login").length > 0) {
     // Attach input event listeners to email and password fields
-    $('input[name="email"], input[name="password"]').on("input", function () {
+    $('input[name="email"], #password').on("input", function () {
       var emailValue = $('input[name="email"]').val().trim();
-      var passwordValue = $('input[name="password"]').val().trim();
+      var passwordValue = $("#password").val().trim();
       var isValid = true;
 
       // Validate Email
@@ -152,12 +152,12 @@ $(document).ready(function () {
       // Validate Password
       if (passwordValue.length > 0 && passwordValue.length < 8) {
         addError(
-          $('input[name="password"]'),
+          $("#password"),
           "Your password must be at least 8 characters long."
         );
         isValid = false;
       } else {
-        removeError($('input[name="password"]'));
+        removeError($("#password"));
       }
     });
 
@@ -171,7 +171,7 @@ $(document).ready(function () {
 
       // Get input values
       var email = $('input[name="email"]').val().trim();
-      var password = $('input[name="password"]').val().trim();
+      var password = $("#password").val().trim();
 
       var isValid = true;
 
@@ -190,7 +190,7 @@ $(document).ready(function () {
       // Validate Password
       if (password.length < 8) {
         addError(
-          $('input[name="password"]'),
+          $("#password"),
           "Your password must be at least 8 characters long."
         );
         isValid = false;
@@ -284,7 +284,7 @@ $(document).ready(function () {
    * Reset Password Page Script
    */
   if ($("#reset-pass").length > 0) {
-    initializeShowHide();
+    // initializeShowHide();
     $("form").submit(function (e) {
       e.preventDefault(); // Prevent default form submission
 
@@ -675,6 +675,11 @@ $(document).ready(function () {
         $("#name").addClass("error-input");
         $("#name-error").text("Please enter your name.");
         isValid = false;
+      } else if (/\d/.test(name)) {
+        // Check if name contains any numbers
+        $("#name").addClass("error-input");
+        $("#name-error").text("Name should not contain numbers.");
+        isValid = false;
       }
 
       // Validate Occupation
@@ -688,6 +693,11 @@ $(document).ready(function () {
       if (phone === "") {
         $("#phone-num").addClass("error-input");
         $("#phone-error").text("Please enter your phone number.");
+        isValid = false;
+      } else if (!/^\d+$/.test(phone)) {
+        // Check if phone contains only numbers
+        $("#phone-num").addClass("error-input");
+        $("#phone-error").text("Phone number should contain only numbers.");
         isValid = false;
       }
 
@@ -1131,6 +1141,33 @@ $(document).ready(function () {
       console.log("Captured Data: ", formData);
     }
 
+    // Function to move to the next form field upon pressing "Enter"
+    $("#frm_calc input, #frm_calc select").keypress(function (e) {
+      // Check if the key pressed is "Enter"
+      if (e.which == 13) {
+        console.log("Enter pressed");
+        if (validateCurrentTab()) {
+          // Find current and next tab panels
+          var $currentTabPanel = $(this).closest(".tab-pane");
+          var $nextTabPanel = $currentTabPanel.next(".tab-pane");
+
+          captureFormData();
+
+          if ($nextTabPanel.length) {
+            // Activate next tab
+            var nextTabId = $nextTabPanel.attr("id");
+            $('[href="#' + nextTabId + '"]').tab("show");
+            // Introduce a delay before updating calculations.
+            setTimeout(function () {
+              updateCalculations();
+            }, 100); // 100 milliseconds delay.
+          }
+          updateNavigationButtons();
+        }
+        return false; // Prevent form submission
+      }
+    });
+
     // Initialize the jQuery Validation Plugin on the form
     $("#frm_calc").validate({
       // Validation rules,
@@ -1466,6 +1503,9 @@ $(document).ready(function () {
         $(".calculator__action .nav-item .nav-link.active").parent().index() +
         1; // Index is 0-based
 
+      // Update step number
+      updateStepNumber(activeTabIndex, totalTabs);
+
       // Enable/disable prevtab button
       if (activeTabIndex === 1) {
         $(".prevtab").addClass("disabled");
@@ -1485,7 +1525,13 @@ $(document).ready(function () {
     }
 
     function updateProgressBar(currentTabIndex, totalTabs) {
-      var progressPercentage = (currentTabIndex / totalTabs) * 100;
+      var progressPercentage;
+      // Check if it's the last tab
+      if (currentTabIndex === totalTabs) {
+        progressPercentage = 100;
+      } else {
+        progressPercentage = (currentTabIndex / totalTabs + 0.1) * 100;
+      }
       $(".progress-bar").css("width", progressPercentage + "%");
     }
 
@@ -1530,6 +1576,18 @@ $(document).ready(function () {
 
       console.log("Capturing data for tab: ", currentTabId);
       console.log("Captured Data: ", formData);
+    }
+
+    // Update step number dynamically
+    function updateStepNumber(currentStep, totalSteps) {
+      // Check if it's the last tab
+      if (currentStep === totalSteps) {
+        $("#step-number").html("Completed");
+      } else {
+        $("#step-number").html(
+          `<u>${currentStep}</u> of ${totalSteps - 1} questions`
+        );
+      }
     }
 
     // Function to move to the next form field upon pressing "Enter"

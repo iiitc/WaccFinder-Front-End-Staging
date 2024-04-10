@@ -343,9 +343,52 @@ form .form-group .iti .iti__flag-container .iti__selected-flag {
 #main_header .navbar .navbar-brand img {
   max-width: 250px;
 }
+#main_header .navbar .navbar-nav .nav-item {
+  position: relative;
+}
+#main_header .navbar .navbar-nav .nav-item .tooltip {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #000;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 5px;
+  opacity: 0;
+  visibility: hidden;
+  font-size: 14px;
+  min-width: max-content;
+  transition: all 0.3s ease;
+}
+#main_header .navbar .navbar-nav .nav-item:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+  top: -30px;
+}
+#main_header .navbar .navbar-nav .nav-item .nav-link .link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  color: #4d4d4d;
+  background-color: #fff;
+  transition: all 0.3s ease-in-out;
+}
+#main_header .navbar .navbar-nav .nav-item .nav-link .link:hover {
+  box-shadow: 3px 2px 45px 0px rgba(0, 0, 0, 0.12);
+}
 #main_header .navbar .navbar-nav .nav-item .nav-link span {
   color: #fff;
   margin-left: 10px;
+}
+#main_header .nav-icon {
+  width: 20px;
+}
+#main_header .nav-icon.account-icon {
+  width: 30px;
 }
 
 /**
@@ -522,12 +565,12 @@ form .form-group .iti .iti__flag-container .iti__selected-flag {
   line-height: 0;
   width: 1.5rem;
   line-height: 1.5rem;
-  background: url(../images/login/ic-show-pw.svg) no-repeat center;
+  background: url(../images/login/ic-hide-pw.svg) no-repeat center;
   background-size: contain;
   cursor: pointer;
 }
 #login form.form-signin .form-group.inpt-pass.show .sh {
-  background: url(../images/login/ic-hide-pw.svg) no-repeat center;
+  background: url(../images/login/ic-show-pw.svg) no-repeat center;
 }
 #login form.form-signin .form-group.inpt-phoneno .select {
   position: absolute;
@@ -844,12 +887,12 @@ form .form-group .iti .iti__flag-container .iti__selected-flag {
   line-height: 0;
   width: 1.5rem;
   line-height: 1.5rem;
-  background: url(../images/login/ic-show-pw.svg) no-repeat center;
+  background: url(../images/login/ic-hide-pw.svg) no-repeat center;
   background-size: contain;
   cursor: pointer;
 }
 #reset-pass .form-reset form .form-group.inpt-pass.show .sh {
-  background: url(../images/login/ic-hide-pw.svg) no-repeat center;
+  background: url(../images/login/ic-show-pw.svg) no-repeat center;
 }
 #reset-pass .form-reset form .form-control:focus {
   border-color: #b5914f;
@@ -1354,12 +1397,12 @@ form .form-group .iti .iti__flag-container .iti__selected-flag {
   line-height: 0;
   width: 1.5rem;
   line-height: 1.5rem;
-  background: url(../images/login/ic-show-pw.svg) no-repeat center;
+  background: url(../images/login/ic-hide-pw.svg) no-repeat center;
   background-size: contain;
   cursor: pointer;
 }
 #security .profile-security-info .form-group.inpt-pass.show .sh {
-  background: url(../images/login/ic-hide-pw.svg) no-repeat center;
+  background: url(../images/login/ic-show-pw.svg) no-repeat center;
 }
 #security .profile-security-info .form-group .error-input {
   border-color: #640000 !important;
