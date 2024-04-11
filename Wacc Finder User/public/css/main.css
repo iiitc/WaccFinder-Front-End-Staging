@@ -390,6 +390,41 @@ form .form-group .iti .iti__flag-container .iti__selected-flag {
   color: #fff;
   margin-left: 10px;
 }
+#main_header.header .container {
+  padding: 1rem 0;
+  border-bottom: 1px solid #bfbfbf;
+  transition: padding 0.3s ease-in-out;
+  position: relative;
+  z-index: 2;
+}
+#main_header.header .navbar-brand {
+  position: relative;
+}
+#main_header.header .navbar-brand .logo {
+  width: 100%;
+  max-width: 200px;
+}
+#main_header.header .nav-link {
+  color: #d6e7ee;
+}
+#main_header.header .nav-link.active, #main_header.header .nav-link.show {
+  color: #b5914f !important;
+}
+#main_header.header .nav-link:hover, #main_header.header .nav-link:focus {
+  color: #b5914f;
+}
+#main_header.header .navbar-toggler {
+  border: 0;
+  box-shadow: unset !important;
+}
+#main_header.header .navbar-toggler .navbar-toggler-icon {
+  background-image: url(../images/download.svg);
+}
+#main_header.header #hamburger-icon {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+}
 
 /**
 * Main Body Section CSS

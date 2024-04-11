@@ -454,6 +454,47 @@ form {
       // Icons and tooltips updated!
     }
   }
+
+  &.header {
+    .container {
+      padding: 1rem 0;
+      border-bottom: 1px solid #bfbfbf;
+      transition: padding 0.3s ease-in-out;
+      position: relative;
+      z-index: 2;
+    }
+    .navbar-brand {
+      position: relative;
+      .logo {
+        width: 100%;
+        max-width: 200px;
+      }
+    }
+    .nav-link {
+      color: $azure-white;
+      &.active,
+      &.show {
+        color: $brown-gold !important;
+      }
+      &:hover,
+      &:focus {
+        color: $brown-gold;
+      }
+    }
+    .navbar-toggler {
+      border: 0;
+      box-shadow: unset !important;
+      .navbar-toggler-icon {
+        background-image: url(../images/download.svg);
+      }
+    }
+
+    #hamburger-icon {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+    }
+  }
 }
 
 /**
